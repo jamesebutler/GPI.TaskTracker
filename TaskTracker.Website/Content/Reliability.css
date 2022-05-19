@@ -1,0 +1,152 @@
+﻿.page-header {
+    margin-top: 60px !important;
+}
+
+.DetailRow{
+    display:table-row!important; 
+}
+.IPLogo {
+    /*background-color: black;*/
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    text-align: right;
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    width:600px; 
+    height: 5px;
+}
+
+.IPLogo span {
+    font-family: IP;
+    font-size: 2.5em;
+    color: white;
+    margin-right: 30px;
+    background-image:url('../Images/GPILogo.png');
+    background-repeat:no-repeat;
+    
+    height: 10px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #FFF !important;
+    border-color:black;
+    border-style:solid;
+    border-width:1px;
+    border-top-width:0px;
+    border-bottom-width:0px;
+}
+
+
+.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
+    color: #000 !important;
+    background-color: lightblue !important;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+    color: #000 !important;
+    background-color: lightblue !important;
+}
+
+.show-grid {
+    margin-bottom: 15px;
+}
+
+    .show-grid [class^="col-"] {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: 1px solid #ddd;
+        border: 1px solid rgba(86,61,124,.2);
+    }
+
+.marginBottom5 {
+    margin-bottom: 5px;
+}
+
+.marginBottom10 {
+    margin-bottom: 10px;
+}
+
+#ui-datepicker-div {
+    display: none;
+}
+
+.modal {
+    font-size: 14px;
+    overflow-y: scroll;
+}
+
+.modal-lg{
+    width:90%;
+    max-width: 1400px;
+    min-height:600px;
+}
+/*  
+    Description: Responsive GridView
+*/
+@media only screen and (max-width: 800px) {
+
+    .nav-tabs > li {
+        float: left;
+        margin-bottom: -1px;
+        width: 100%;
+    }
+
+    /* Force gridview to not be like gridview anymore */
+    #no-more-gridView table,
+    #no-more-gridView tbody,
+    #no-more-gridView th,
+    #no-more-gridView td,
+    #no-more-gridView tr {
+        display: block;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    #no-more-gridView .table_column_head > * {
+        display: none;
+    }
+
+    #no-more-gridView thead {
+        display: none;
+    }
+
+    #no-more-gridView tr {
+        all: revert;
+        border: 2px solid #ccc;
+        height: auto !important;
+    }
+
+    #no-more-gridView td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+        text-align: left;
+        padding-bottom: 1em;
+    }
+
+        #no-more-gridView td:before {
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            left: 6px;
+            width: 45% !important;
+            padding-right: 10px;
+            white-space: nowrap;
+            text-align: left;
+            font-weight: bold;
+        }
+        /*
+    Label the data
+    */
+        #no-more-gridView td:before {
+            content: attr(data-title);
+            display: block;
+            white-space: pre-line;
+        }
+}/*End Responsive Gridview*/
+
+ .facilitypicker > button {
+    display: none;
+}

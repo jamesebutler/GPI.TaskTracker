@@ -1,0 +1,150 @@
+
+Partial Class User_Controls_EmployeeList2
+    Inherits System.Web.UI.UserControl
+
+#Region "Fields"
+    Private mPlantCode As String = -1
+#End Region
+
+#Region "Properties"
+    ''' <summary>
+    ''' Gets the javascript that is used to display the Employee List picker
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>String - javascript syntax that will be used on the onClick event to display the Employee List Picker</returns>
+    ''' <remarks></remarks>
+    Public ReadOnly Property GetShowUserJS() As String
+        Get
+            Return "ResponsibleUser.ShowResponsibleUser(this);"
+        End Get
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the Plant Code based on the selected facility
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Property PlantCode() As String
+        Get
+            Return mPlantCode
+        End Get
+        Set(ByVal value As String)
+            mPlantCode = value
+        End Set
+    End Property
+#End Region
+
+#Region "Methods"
+    Private Sub HandlePageLoad()
+
+        Try
+
+            Dim siteItem As New TaskTrackerSiteBLL
+            Dim FacilityList As System.Collections.Generic.List(Of Facility) = siteItem.GetFacility("", "")
+
+            '**************************************************
+            'Configure page to use a web service'
+            Dim sc As ScriptManager
+            sc = CType(Page.Form.FindControl("_scriptManager"), ScriptManager)
+            If sc IsNot Nothing Then
+                Dim loService As New ServiceReference
+                loService.InlineScript = False
+                loService.Path = "~/WebServices/SiteDropDownsWS.asmx"
+                sc.Services.Add(loService)
+            End If
+            '***************************************************
+
+            If Not Page.IsPostBack Then
+                For Each item As Facility In FacilityList
+                    With Me._ddlResponsibleFacility
+                        .Items.Add(New ListItem(item.SiteName, item.PlantCode))
+                    End With
+                Next
+                Me._ddlResponsibleFacility.Items.Insert(0, "")
+                If _ddlResponsibleFacility.Items.FindByValue(PlantCode) IsNot Nothing Then
+                    _ddlResponsibleFacility.Items.FindByValue(PlantCode).Selected = True
+                    PopulateEmployeeList()
+                Else
+                    Me._ddlResponsibleFacility.SelectedIndex = 0
+                End If
+
+            End If
+
+            ScriptManager.RegisterStartupScript(Me.Page, Page.GetType, "EmployeeList", GetGlobalJS(), True)
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Public Sub PopulateEmployeeList()
+        Dim taskItem As New TaskTrackerListsBLL
+        Dim plantCode As String = Me._ddlResponsibleFacility.SelectedValue
+        Dim UserList As System.Collections.Generic.List(Of ResponsibleUsers) = taskItem.GetResponsibleUsers(plantCode)
+        Dim RoleDescription As String = String.Empty
+
+        RoleDescription = String.Empty
+        For Each item As ResponsibleUsers In UserList
+            Dim spaceChar As String = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+            With _ddlResponsibleUser
+
+                If item.RoleDescription <> RoleDescription Then 'New Group
+                    Dim roleItem As New ListItem
+                    RoleDescription = item.RoleDescription
+                    roleItem.Text = item.RoleDescription.ToUpper
+                    roleItem.Value = item.RoleSeqID
+
+                    If .Items.Count > 0 Then
+                        Dim blankItem As New ListItem
+                        With blankItem
+                            .Attributes.Add("disabled", "true")
+                            .Text = ""
+                            .Value = -1
+                        End With
+                        .Items.Add(blankItem)
+                    End If
+
+                    If RoleDescription.Length > 0 And item.RoleSeqID > 0 Then
+                        'roleItem.Attributes.Add("optgroup", RoleDescription)
+
+                        roleItem.Attributes.Add("style", "background-color:ActiveBorder; color:black; font-size:Larger;")
+                        .Items.Add(roleItem)
+                    Else
+                        roleItem.Attributes.Add("style", "background-color:ActiveBorder; color:black;")
+                        roleItem.Attributes.Add("disabled", "true")
+                        .Items.Add(roleItem)
+                    End If
+
+
+                End If
+                Dim useritem As New ListItem
+                With useritem
+
+                    .Text = Server.HtmlDecode(spaceChar & IP.Bids.SharedFunctions.ToTitleCase(item.FullName.ToLower))
+                    .Value = item.UserName
+                End With
+                .Items.Add(useritem)
+            End With
+        Next
+    End Sub
+
+    Private Function GetGlobalJS() As String
+        Dim sb As New StringBuilder
+        With sb
+            .Append("var _ddlResponsibleFacility = '" & Me._ddlResponsibleFacility.ClientID & "';")
+            .Append("var _ddlResponsibleUser = 'ctl00__cphMainContent_Copy1__EmployeeList__EmployeeList_lbAvailableItems';") ' & _EmployeeList.ClientID & "';") ' Me._ddlResponsibleUser.ClientID & "';")
+            .Append("var _txtTargetID = '" & Me._txtTargetID.ClientID & "';")
+            .Append("var _txtResponsibleUserName = '" & Me._txtResponsibleUserName.ClientID & "';")
+        End With
+        Return sb.ToString
+    End Function
+#End Region
+
+#Region "Events"
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        HandlePageLoad()
+    End Sub
+#End Region
+
+End Class

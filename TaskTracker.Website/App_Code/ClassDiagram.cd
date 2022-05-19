@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="DataMaintenanceDAL" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\DataSets\DataMaintenanceDAL.vb</FileName>
+      <HashCode>AAAwAAAAAwAEAQJABAAAQAgACAgCQBgEAIAAAAEABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataMaintenanceDALTableAdapters.NotificationProfileTableAdapter">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\DataSets\DataMaintenanceDAL.vb</FileName>
+      <HashCode>EAAAAGAAAAABAAMAIAAAAAAAACAICAAAAAAAAQAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataMaintenanceDALTableAdapters.EmployeeTableAdapter" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\DataSets\DataMaintenanceDAL.vb</FileName>
+      <HashCode>EAAAAGAAAAAAAAMAIAAAAAAAACAICAAAEAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataMaintenanceDALTableAdapters.ServiceNameTableAdapter">
+    <Position X="2.25" Y="1.5" Width="5" />
+    <TypeIdentifier>
+      <FileName>App_Code\DataSets\DataMaintenanceDAL.vb</FileName>
+      <HashCode>EAAAAGAAAAAAAAMAIEAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

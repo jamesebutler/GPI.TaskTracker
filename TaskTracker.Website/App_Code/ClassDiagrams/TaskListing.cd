@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="TaskListingBLL">
+    <Position X="0.5" Y="0.5" Width="4.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessLogicLayer\TaskListingBLL.vb</FileName>
+      <HashCode>lmICAECSkgCiEcJkFABEABAIABAAAERAASAAA0ABQAM=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.TaskListing">
+    <Position X="5.5" Y="0.5" Width="41.75" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AkESgsQOkACgBCowAcAUQARsARAAgCjwoqAEwEAVCCA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

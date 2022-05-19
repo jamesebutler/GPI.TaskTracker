@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="IP.MEAS.BO.TaskActivity" Collapsed="true">
+    <Position X="6.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAEAAAAAAEAAAAAAAAQAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.TaskType" Collapsed="true">
+    <Position X="8" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAIAAAAAAAAABAAAAACEAAAAAAgAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.BusinessManagers" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAgAAAAIAAAAAAAAAEAAAAAAAAAQAAAACAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.TypeManagers" Collapsed="true">
+    <Position X="9.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAgAAAAIAAAAAAAAAEAAAAAAAAAQAAAACAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.SourceSystems" Collapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAIAEAAgAAAAAAAAAAAAEAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.Division" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAEAAAAAAAAAAAAAAAABAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.Region" Collapsed="true">
+    <Position X="4.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAEAAAAAAAAAAAAAAAAIAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.RecurringTasks" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAgAAAACgAAIAIAAAAAAAAAAAAAAAAAAAIAiA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.Facility" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAkAAAAAAAAAiAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.BusinessUnitArea" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAgAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.Area" Collapsed="true">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAAAAAAAQAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.BusinessUnit" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAgAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.LineLineBreak" Collapsed="true">
+    <Position X="4.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAAEAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.Line" Collapsed="true">
+    <Position X="1" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAABAAAAAAAABAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.LineBreak" Collapsed="true">
+    <Position X="2.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAAEAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.TaskHeaderRecord" Collapsed="true">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AmACgkAagAAgAEIEAAAEIAAkARBAQADAoyBBgEgxCCE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.MTTDocuments" Collapsed="true">
+    <Position X="6.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>gAAAAAAQAAAgAQAEAAJAAAAAAAAAAAAAAAAACBBAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.TaskPriorities" Collapsed="true">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAgABAAAAAAAABAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.ResponsibleUsers" Collapsed="true">
+    <Position X="1" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AUAABAAAgAAAAIAAIAAAAAAkAAAAAAAAAQkQEAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.TaskItem" Collapsed="true">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>ASACI0AQoICgIGgkGIAMAQFIBABAAACYAwAAEAiAIgE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.SubTaskItem" Collapsed="true">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AQCAIABgAIAgIEgAAIAMBAAAIKBCABQkAkgAEBggAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.TaskListing" Collapsed="true">
+    <Position X="2.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AkESgsQOkACgBCowAcAUQARsARAAgCjwoqAEwEAVCCA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.ReportTitles" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAEAAAAAAAAAAQAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.ReportSortValues" Collapsed="true">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAEAAAAIAAAAEAAAQhAAAAAAEEgAABAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.ReportParameters" Collapsed="true">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAAACAAEAAAAAAAAAEAQAADEAAAgQAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.RecurringParametersList" Collapsed="true">
+    <Position X="1" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAABAAEAIgAAAAAAAIAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.RecurringParameters" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>ACAAAAAAAAAAAAgAAIAAAABAACBIABAAAKAAIAgAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.TaskStatus" Collapsed="true">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAATEAAAAAAAQAAAAAAAEAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.UserDefaults" Collapsed="true">
+    <Position X="1" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAgAAAAAAAAAAIAAABAAAAAABAAACAAIAQAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.TaskItemComments" Collapsed="true">
+    <Position X="1" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>ACAAAAIAAAAAAAACAQIAAAAAAABAABAAAAAQAAgAIAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.NotificationProfile" Collapsed="true">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>ABAAAAAAAAAAAAAAQIAAAABgAAAIAAAEAOAAMAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

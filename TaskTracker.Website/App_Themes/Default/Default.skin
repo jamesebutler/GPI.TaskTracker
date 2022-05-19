@@ -1,0 +1,39 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<asp:Label skinid="LabelButton" runat="server" cssClass="Button"  BorderStyle=Outset BorderWidth=2 style="cursor:hand;padding-left:5px; padding-right:5px; padding-top:3px; padding-bottom:3px;" onmouseover="this.className='Buttonhover';" onmouseout="this.className='Button';"/>
+<asp:Button runat="server" cssClass="Button" onmouseover="this.className='Buttonhover';" onmouseout="this.className='Button';"/>
+<%-- <asp:Menu skinid="mainMenu" runat="server"  
+DynamicMenuStyle-BorderStyle="solid"
+DynamicMenuStyle-BorderWidth="1"
+DynamicMenuItemStyle-HorizontalPadding="10"
+DynamicMenuItemStyle-VerticalPadding="2"
+DynamicHoverStyle-BackColor="#000000"
+DynamicHoverStyle-ForeColor="#FFFFFF"
+DynamicMenuItemStyle-ForeColor="#000000"  
+DynamicMenuItemStyle-BackColor="#FF0000"
+DynamicHoverStyle-Font-Bold=true
+DynamicMenuItemStyle-Font-Bold=true
+Orientation="Horizontal" ItemSpacing="10px" CssClass="mainnav" >	
+<StaticMenuStyle CssClass="Button" />    
+<StaticHoverStyle CssClass="Buttonhover" />	 
+<StaticMenuItemStyle CssClass="Button"/> 
+<DynamicMenuStyle CssClass="Button" />    
+<DynamicHoverStyle CssClass="Buttonhover" />	 
+<DynamicMenuItemStyle CssClass="Button"/> 
+<DynamicSelectedStyle CssClass="Buttonhover" />   
+   
+</asp:Menu>--%>
+<asp:Treeview runat="Server" CollapseImageUrl="~/LoadImages.aspx?ImageUrl=~/Images/collapse.gif" ExpandImageUrl="~/LoadImages.aspx?ImageUrl=~/Images/expand.gif" />

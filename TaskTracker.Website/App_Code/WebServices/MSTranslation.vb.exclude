@@ -1,0 +1,41 @@
+﻿Imports System.Web
+Imports System.Web.Configuration
+Imports System.Web.Services
+Imports System.Web.Services.Protocols
+
+' To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line.
+' <System.Web.Script.Services.ScriptService()> _
+<WebService(Namespace:="http://ridev.ipaper.com/")> _
+<System.Web.Script.Services.ScriptService()> _
+Public Class MSTranslation
+    Inherits System.Web.Services.WebService
+
+    <WebMethod()>
+    Public Function TranslateText(ByVal textToTranslate As String, ByVal currentLanguage As String, returnEmptyIfDuplicate As Boolean) As String
+        Return textToTranslate 'Translation.TranslateUsingApi(textToTranslate, currentLanguage, True, returnEmptyIfDuplicate)
+    End Function
+
+    <WebMethod()>
+    Public Function DetectLanguage(ByVal textToDetect As String) As String
+        Return Translation.DetectLanguage(textToDetect)
+    End Function
+
+    <WebMethod()>
+    Private Function DetectAuthenticationMode() As String
+        ' Get the Web application configuration.
+        Dim configuration As System.Configuration.Configuration = System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration("/aspnetTest")
+
+        ' Get the section.
+        Dim authenticationSection As AuthenticationSection = CType(configuration.GetSection("system.web/authentication"), AuthenticationSection)
+        Dim authenticationWebServicesSection As AuthenticationSection = CType(configuration.GetSection("system.web/location/webservices"), AuthenticationSection)
+        'Dim currentMode As Web.Configuration.AuthenticationMode = Web.Configuration.AuthenticationSection.Mode
+        Return authenticationSection.Mode
+    End Function
+
+    <WebMethod()>
+    Private Function WhoAmI() As String
+        ' Get the Web application configuration.
+        Return "Running as User : " & Threading.Thread.CurrentPrincipal.Identity.Name
+    End Function
+
+End Class

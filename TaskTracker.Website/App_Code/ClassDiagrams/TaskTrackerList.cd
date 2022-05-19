@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="TaskTrackerListsBLL">
+    <Position X="0.5" Y="0.5" Width="5.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessLogicLayer\TaskTrackerListsBLL.vb</FileName>
+      <HashCode>AAAAAgAAAAAAAAACAEAAAAAAAAAAAAAABAAAAIggAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.TaskActivity">
+    <Position X="6.25" Y="0.5" Width="3.75" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAEAAAAAAEAAAAAAAAQAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.ResponsibleUsers">
+    <Position X="0.5" Y="3" Width="7.75" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AUAABAAAgAAAAIAAIAAAAAAkAAAAAAAAAQkQEAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.SourceSystems">
+    <Position X="0.5" Y="7" Width="4" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAIAEAAgAAAAAAAAAAAAEAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.TaskType">
+    <Position X="0.5" Y="9.5" Width="3" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAIAAAAAAAAABAAAAACEAAAAAAgAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.TaskStatus">
+    <Position X="4.75" Y="7" Width="4.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAATEAAAAAAAQAAAAAAAEAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

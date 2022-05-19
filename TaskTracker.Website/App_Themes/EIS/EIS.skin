@@ -1,0 +1,30 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<asp:Menu Width="100%" SKINID="mainMenu" runat="server" Orientation="Horizontal" BackColor="#FFFFFF"
+    StaticEnableDefaultPopOutImage="true" StaticPopOutImageTextFormatString="" StaticPopOutImageUrl="~/Images/ArrowRight.gif"
+    DynamicMenuItemStyle-ItemSpacing="1" StaticMenuItemStyle-ItemSpacing="2px" StaticMenuItemStyle-BackColor="Black" StaticHoverStyle-BackColor="#CCCC99">
+    <StaticMenuStyle CssClass="mainMenuBack" />
+    <StaticHoverStyle CssClass="mainMenuBackHover" />
+    <StaticMenuItemStyle BorderStyle="solid" BorderWidth="0" BorderColor="white" />
+    <DynamicMenuStyle CssClass="mainSubMenuBack" />
+    <DynamicHoverStyle CssClass="mainSubMenuBackHover" />
+    <DynamicMenuItemStyle CssClass="mainSubMenu"/>
+    <DynamicSelectedStyle />
+</asp:Menu> 
+<asp:Label skinid="LabelButton" runat="server" cssClass="Button"  BorderStyle=Outset BorderWidth=2 style="cursor:hand;padding-left:5px; padding-right:5px; padding-top:3px; padding-bottom:3px;" onmouseover="this.className='Buttonhover';" onmouseout="this.className='Button';"/>
+<asp:Label  Font-Bold="true" runat="server"></asp:Label>
+<asp:Button runat="Server" cssClass="Button"/>
+<asp:Button runat="server" skinid="ButtonBlack" Font-Bold="true" CssClass="ButtonBlack" style="cursor:hand;" onmouseover="this.className='Button';" onmouseout="this.className='ButtonBlack';"/>  

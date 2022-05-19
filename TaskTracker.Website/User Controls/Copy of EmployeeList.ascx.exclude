@@ -1,0 +1,32 @@
+<%@ Control Language="VB" AutoEventWireup="false" CodeFile="Copy of EmployeeList.ascx.vb"
+    Inherits="User_Controls_EmployeeList2" %>
+<Ajax:UpdatePanel ID="_udpUser" runat="server" UpdateMode="Always">
+    <ContentTemplate>
+        <div>
+            <div style="display: none">
+                <asp:TextBox ID="_txtResponsibleUser" runat="server" ReadOnly="true"></asp:TextBox>
+                <asp:TextBox ID="_txtResponsibleUserName" runat="server" ReadOnly="true"></asp:TextBox>
+                <asp:TextBox ID="_txtTargetID" runat="server" ReadOnly="true"></asp:TextBox></div>
+            <asp:Panel ID="_pnlResponsible" runat="server" CssClass="BorderSecondary" BorderColor="black"
+                BorderWidth="2">
+                <div class="Border">
+                    <asp:Label ID="_lblFacility" runat="server" Text="Facility/Location" Font-Bold="true"
+                        Width="150px"></asp:Label>&nbsp;&nbsp;<asp:Label ID="Label1" runat="server" Text="Employee/Role Name"
+                            Font-Bold="true"></asp:Label><br />
+                    <asp:DropDownList ID="_ddlResponsibleFacility" onchange="ResponsibleUser.populateResponsibleUsers(this);"
+                        runat="server" Width="150px">
+                    </asp:DropDownList>&nbsp;
+                    <asp:DropDownList ID="_ddlResponsibleUser" runat="server" onchange="ResponsibleUser.SetResponsibleUser(this);"
+                        Style="min-width: 100px">
+                    </asp:DropDownList>
+                    <IP:SwapListBox ID="_EmployeeList" runat="server">
+                    </IP:SwapListBox>
+                </div>
+            </asp:Panel>
+        </div>
+        <ajaxToolkit:PopupControlExtender ID="_pceResponsibleUser" BehaviorID="_bhResponsibleUser"
+            runat="server" TargetControlID="_txtResponsibleUser" PopupControlID="_pnlResponsible"
+            Position="Bottom">
+        </ajaxToolkit:PopupControlExtender>
+    </ContentTemplate>
+</Ajax:UpdatePanel>

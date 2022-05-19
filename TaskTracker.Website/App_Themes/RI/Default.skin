@@ -1,0 +1,42 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<asp:Image skinid="BannerMain" runat="Server" ImageUrl="~/App_Themes/RI/Banner.aspx"/>
+<asp:Image skinid="Logo" runat="server" ImageUrl="~/App_Themes/RI/Images/iplogo_Black.gif"/>
+<asp:Menu Width="100%" SKINID="mainMenu" runat="server" Orientation="Horizontal" BackColor="#FFFFFF"
+    StaticEnableDefaultPopOutImage="true" StaticPopOutImageTextFormatString="" StaticPopOutImageUrl="~/Images/ArrowRight.gif"
+    DynamicMenuItemStyle-ItemSpacing="2px" StaticMenuItemStyle-ItemSpacing="2px" StaticMenuItemStyle-BackColor="Black" StaticHoverStyle-BackColor="#CCCC99"  DynamicMenuItemStyle-BackColor="Black" DynamicHoverStyle-BackColor="#CCCC99" DynamicMenuStyle-Width="200px" DynamicMenuItemStyle-Width="200px">
+     <StaticMenuStyle CssClass="mainMenuBack" />
+    <StaticHoverStyle CssClass="mainMenuBackHover" />
+    <StaticMenuItemStyle BorderStyle="solid" BorderWidth="0" BorderColor="white" />
+   <DynamicHoverStyle CssClass="mainMenuBackHover" />
+   <DynamicMenuItemStyle BorderStyle="solid" BorderWidth="0" BorderColor="white" />
+</asp:Menu> 
+<asp:Label  Font-Bold="true" runat="server"></asp:Label> 
+<asp:Label skinid="Required" Font-Bold="true" runat="server" text="*" ForeColor="Red"/>
+<asp:Label skinid="LabelButton" runat="server" Font-Bold="false" cssClass="Button btn"  BorderStyle=Outset BorderWidth=2 style="cursor:hand;padding-left:1px; padding-right:1px; padding-top:3px; padding-bottom:3px;" onmouseover="this.className='ButtonHover btn';" onmouseout="this.className='Button btn';"/>
+<asp:Button runat="Server" cssClass="Button btn btn-block" Font-Bold="false" />
+<asp:Button runat="server" skinid="ButtonBlack" CssClass="ButtonBlack btn  btn-block"  style="cursor:hand;" Font-Bold="false" onmouseover="this.className='Button btn btn-block';" onmouseout="this.className='ButtonBlack btn btn-block';"/>  
+<asp:LinkButton skinid="Button" runat="server" CssClass="btn btn-default btn-block" onmouseover="this.className='btn btn-secondary btn-block';" onmouseout="this.className='btn btn-default btn-block';" style="white-space: normal;"/>
+<asp:LinkButton skinid="ButtonPrimary" runat="server" CssClass="ButtonPrimary btn btn-primary btn-block" onmouseover="this.className='ButtonPrimary btn btn-secondary btn-block';" onmouseout="this.className='ButtonPrimary btn btn-primary btn-block';"  style="white-space: normal;"/>
+<asp:LinkButton skinid="ButtonToolbar" runat="server" CssClass="btn btn-default" onmouseover="this.className='btn btn-secondary';" onmouseout="this.className='btn btn-default';" style="white-space: normal;"/>
+<asp:LinkButton skinid="ButtonToolbarPrimary" runat="server" CssClass="ButtonPrimary btn btn-primary" onmouseover="this.className='ButtonPrimary btn btn-secondary';" onmouseout="this.className='ButtonPrimary btn btn-primary';"  style="white-space: normal;"/>
+
+<asp:Table runat="Server" cssClass="table table-bordered"/>
+<asp:Table runat="Server" skinid="noborder" cssClass="table"/>
+<asp:DropDownList skinid="nolivesearch"  runat="server" cssClass="form-control input-sm"  data-live-search-style="contains" data-live-search="false" data-container="body" data-none-Selected-Text="..."/>
+<asp:DropDownList  runat="server" cssClass="form-control input-sm selectpicker"  data-live-search-style="contains" data-live-search="true" data-container="body" data-none-Selected-Text="..."/>
+<asp:DropDownList skinid="multiselectfilter"  runat="server" cssClass="form-control input-sm selectpicker" data-live-search-style="contains" data-live-search="true" data-container="body" data-none-Selected-Text="..."/>
+<asp:TextBox runat="server" cssClass="form-control input-sm"/>

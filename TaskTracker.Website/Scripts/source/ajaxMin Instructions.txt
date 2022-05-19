@@ -1,0 +1,24 @@
+
+--Master
+C:\Program Files\Microsoft\Microsoft Ajax Minifier 4>ajaxmin "c:\Personal Docume
+nts\Websites\EHS\scripts\source\Master.js" -o "c:\Personal Documents\Websites\C
+EMR\scripts\master.js" -clobber
+
+
+--AirEmissionsInventory.js
+C:\Program Files\Microsoft\Microsoft Ajax Minifier 4>ajaxmin "c:\Personal Docume
+nts\Websites\EHS\scripts\source\AirEmissionsInventory.js" -o "c:\Personal Documents\Websites\C
+EMR\scripts\AirEmissionsInventory.js" -clobber
+
+--chainedselects.js
+C:\Program Files\Microsoft\Microsoft Ajax Minifier 4>ajaxmin "c:\Personal Docume
+nts\Websites\EHS\scripts\source\chainedselects.js" -o "c:\Personal Documents\Websites\C
+EMR\scripts\chainedselects.js" -clobber
+
+--StartEndCalendar.js
+C:\Program Files\Microsoft\Microsoft Ajax Minifier 4>ajaxmin "c:\Personal Docume
+nts\Websites\EHS\scripts\source\StartEndCalendar.js" -o "c:\Personal Documents\Websites\C
+EMR\scripts\StartEndCalendar.js" -clobber
+
+
+--Copy the contents of the 4 minified scripts up above into the CEMRCombined script file

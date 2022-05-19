@@ -1,0 +1,210 @@
+﻿<%@ Master Language="VB" CodeFile="TaskTrackerResponsive.master.vb" Inherits="MasterPages_TaskTrackerResponsive" %>
+
+<!DOCTYPE html>
+<%@ Register Src="~/User Controls/ucCultureSelection.ascx" TagName="CultureSelection"
+    TagPrefix="IP" %>
+<%@ Register Src="~/User Controls/DowntimeMessage.ascx" TagPrefix="IP" TagName="DowntimeMessage" %>
+
+<html>
+<head id="pageHeader" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>Graphic Packaging | EHS Task Tracking</title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body onload="LoadEvents();">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="_scriptManager" AsyncPostBackTimeout="10000"
+            EnablePageMethods="false" LoadScriptsBeforeUI="true" ScriptMode="release" runat="server"
+            EnablePartialRendering="true">
+        </asp:ScriptManager>
+        <asp:Panel runat="server" ID="_pnlNavBar">
+            <nav class="navbar navbar-default navbar-fixed-top navbar-inverse headerImage" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Task Tracker</a>
+                </div>
+
+                <div class="navbar-collapse navbar-collapse-main collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+
+<%--         JEB MASTER MENU HERE
+                        <li id="TaskHeader">
+                            <a href="~/TaskHeader.aspx" runat="server">
+                                <asp:Localize runat="server" Text="JEB TEST"></asp:Localize></a>
+                        </li>--%>
+
+
+                        <li id="TaskHeader">
+                            <a href="~/TaskHeader.aspx" runat="server">
+                                <asp:Localize runat="server" Text="<%$IPResources:Global,Enter Task Header%>"></asp:Localize></a>
+                        </li>
+
+
+
+                        <li class="dropdown" id="ViewTasks">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <asp:Localize runat="server" Text="<%$IPResources:Global,Task Listing%>"></asp:Localize><strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="~/ViewTasks.aspx" runat="server">
+                                        <%--<asp:Localize runat="server" Text="<%$IPResources:Global,Using MyHelp%>"></asp:Localize></a>--%>
+                                    <asp:Localize runat="server" Text="View Task"></asp:Localize></a>
+                                </li>
+
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="~/ViewTasksSimple.aspx" runat="server">
+                                        <asp:Localize runat="server" Text="Simple View Task"></asp:Localize></a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+
+
+<%--                        <li id="ViewTask">
+                            <a href="~/ViewTasks.aspx" runat="server">
+                                <asp:Localize runat="server" Text="<%$IPResources:Global,Task Listing%>"></asp:Localize></a>
+                        </li>--%>
+                        <li id="Reports">
+                            <a href="~/ReportSelection.aspx" runat="server">
+                                <asp:Localize runat="server" Text="<%$IPResources:Global,Reports%>"></asp:Localize></a>
+                        </li>
+                        <li id="DataMaintenance">
+                            <a href="~/DataMaintenance.aspx" runat="server">
+                                <asp:Localize runat="server" Text="<%$IPResources:Global,Data Maintenance%>"></asp:Localize></a>
+                        </li>
+                        <li class="dropdown" id="Help">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <asp:Localize runat="server" Text="<%$IPResources:Global,Help%>"></asp:Localize><strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="~/Help/UsingMyHelp.aspx" runat="server">
+                                        <%--<asp:Localize runat="server" Text="<%$IPResources:Global,Using MyHelp%>"></asp:Localize></a>--%>
+                                    <asp:Localize runat="server" Text="Help"></asp:Localize></a>
+                                </li>
+                                <li>
+                                    <a href="~/Help/OnlineTraining.aspx" runat="server">
+                                        <asp:Localize runat="server" Text="<%$IPResources:Global,Online Training%>"></asp:Localize></a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="~/Admin/CacheViewer.aspx" runat="server">
+                                        <asp:Localize runat="server" Text="<%$IPResources:Global,Cache Viewer%>"></asp:Localize></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="hidden-xs nav navbar-nav navbar-right IPLogo">
+                        <asp:Image runat="server" ImageUrl="~/Images/GPILogo.png" />
+                    </div>
+                    <%--<ul class="hidden-xs nav navbar-nav navbar-right IPLogo">
+                    <li>
+                        <span>A</span>
+                    </li>
+                </ul>--%>
+                </div>
+            </nav>
+            <br />
+            <br />
+            <br />
+        </asp:Panel>
+        
+        
+        <asp:Table id="warningTestDatabase" runat="server" Visible="false">
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label Font-Bold="true" Font-Size="32px" ForeColor="Red" runat="server" Text="WARNING! This is the test system."></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+
+        </asp:Table>
+        
+        
+        <div class="container-fluid">
+           <%-- <asp:Panel ID="_pnlAlert" runat="server" Visible="false" EnableViewState="false">--%>
+            <IP:DowntimeMessage runat="server" ID="DowntimeMessage" />
+                <div id="_alertInfo" runat="server" class="alert alert-warning alert-dismissible" role="alert" enableviewstate="false">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2>
+                        <asp:Label ID="_lblAlertTitle" ClientIDMode="Static" runat="server"></asp:Label></h2>
+                    <asp:Label ID="_lblAlertInfo" runat="server" ClientIDMode="Static"></asp:Label>
+                </div>
+            <%--</asp:Panel>--%>
+            <div id="_dvMainContent" runat="server" style="min-height: 500px; text-align: left; vertical-align: top;">
+                <asp:ContentPlaceHolder ID="_cphMainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <div class="panel panel-default table-responsive">
+                <div class="panel-footer pageFooter">
+                    <div class="row">
+                        <div class="col-sm-6 text-left ">
+                            <IP:CultureSelection ID="ucCultureSelection1" Visible="true" runat="server" />
+                        </div>
+
+                         <div class="col-sm-6  text-right" > 
+                            <IP:IPLogin ID="_login" runat="server"  />
+                        </div>
+                      </div>
+                    <div class="row">
+
+ 
+                         
+                             <div class="col-sm-12 text-left   "  >
+                            <IP:Footer ID="Footer1" runat="server" />
+                            
+
+                         </h1>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="errorModal" class="modal fade errorModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="valModalTitle">
+                            <asp:Localize runat="server" Text="<%$IPResources:Global,Validation Warning%>"></asp:Localize></h4>
+                    </div>
+                    <div class="modal-body" id="valModalBody">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <div id="backgroundModal" class="modal fade errorModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <h4 class="modal-title" id="errorModalTitle">
+                        <asp:Localize runat="server" Text="<%$IPResources:Global,Please Wait%>"></asp:Localize></h4>
+                    <div class="modal-body">
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <div class="visible-sm">visible-sm</div>
+        <div class="visible-md">visible-md</div>
+       <%-- <div class="visible-lg">visible-lg</div>--%>
+        <div class="visible-xs">visible-xs</div>
+    </form>
+</body>
+</html>

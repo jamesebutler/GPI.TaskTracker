@@ -1,0 +1,11 @@
+<%@ Control Language="VB" AutoEventWireup="false" CodeFile="UcSpellcheck.ascx.vb"
+    Inherits="UCSpellcheck" %>
+<Karamasoft:UltimateSpell ID="_spellIncidentDescription" runat="server" ShowAddButton="false"
+    ShowSpellButton="false" IgnoreDisabledControls="true" ShowModal="true" ShowOptions="true"
+    EnableTheming="false" SpellAsYouType="false">
+</Karamasoft:UltimateSpell>
+<%--<asp:Button ID="_btnSpell" Text="<%$IPResources:Shared,SpellCheck %>" EnableViewState="false"
+    runat="server" />--%>
+<asp:LinkButton ID="_lnkSpellCheck" runat="server" CssClass="btn btn-default btn-block" onmouseover="this.className='btn btn-secondary btn-block';" onmouseout="this.className='btn btn-default btn-block';">
+    <span class="glyphicon glyphicon-ok"></span>&nbsp;<asp:Label ID="_lblSpellCheck" runat="server" Text="<%$IPResources:Shared,SpellCheck %>"></asp:Label>
+</asp:LinkButton>

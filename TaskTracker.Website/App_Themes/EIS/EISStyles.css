@@ -1,0 +1,542 @@
+BODY
+{
+    BACKGROUND-COLOR: white
+}
+.heading1
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: medium;
+    COLOR: navy
+}
+.SelectionLine
+{
+    BACKGROUND-COLOR: lightgoldenrodyellow
+}
+.bluehand
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: x-small;
+    CURSOR: hand;
+    COLOR: blue;
+    FONT-FAMILY: Times New Roman
+}
+.DisplayDataText
+{
+    FONT-SIZE: x-small;
+    COLOR: black;
+    FONT-FAMILY: MS Sans Serif
+}
+.sps
+{
+    FONT-SIZE: x-small;
+    COLOR: black;
+    FONT-FAMILY: Times New Roman
+}
+.r
+{
+    FONT-SIZE: x-small;
+    CURSOR: hand;
+    COLOR: blue;
+    FONT-FAMILY: Times New Roman;
+    TEXT-ALIGN: right;
+    TEXT-VALIGN: bottom
+}
+.x
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: x-small;
+    CURSOR: hand;
+    COLOR: firebrick;
+    FONT-FAMILY: Times New Roman;
+    BACKGROUND-COLOR: #ffff99;
+    TEXT-ALIGN: right;
+    TEXT-VALIGN: bottom
+}
+.p
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: x-small;
+    CURSOR: hand;
+    COLOR: darkorange;
+    FONT-FAMILY: Times New Roman;
+    TEXT-ALIGN: right;
+    TEXT-VALIGN: bottom
+}
+.w1
+{
+    FONT-SIZE: x-small;
+    CURSOR: hand;
+    COLOR: blue;
+    FONT-FAMILY: Times New Roman;
+    BACKGROUND-COLOR: #ffffcc;
+    TEXT-ALIGN: right;
+    TEXT-VALIGN: bottom
+}
+.w2
+{
+    FONT-SIZE: x-small;
+    CURSOR: hand;
+    COLOR: blue;
+    FONT-FAMILY: Times New Roman;
+    BACKGROUND-COLOR: #ffff99;
+    TEXT-ALIGN: right;
+    TEXT-VALIGN: bottom
+}
+.blueleft
+{
+    FONT-SIZE: x-small;
+    CURSOR: hand;
+    COLOR: blue;
+    FONT-FAMILY: Times New Roman;
+    TEXT-ALIGN: left;
+    TEXT-VALIGN: bottom
+}
+.rg
+{
+    FONT-SIZE: x-small;
+    CURSOR: hand;
+    COLOR: blue;
+    FONT-FAMILY: Times New Roman;
+    TEXT-ALIGN: left
+}
+.ocsdata
+{
+    BACKGROUND-COLOR: #badac7;
+    TEXT-ALIGN: left
+}
+.bodydatalabel2
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: x-small;
+    BACKGROUND-COLOR: #ebebeb
+}
+.M1
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: xx-small;
+    COLOR: black;
+    FONT-FAMILY: MS Sans Serif;
+    TEXT-ALIGN: center;
+    TEXT-DECORATION: none
+}
+.M2
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: xx-small;
+    COLOR: #99ff66;
+    FONT-FAMILY: MS Sans Serif;
+    TEXT-DECORATION: none
+}
+.M3
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: xx-small;
+    COLOR: #ffeb00;
+    FONT-FAMILY: MS Sans Serif;
+    TEXT-DECORATION: none
+}
+.IP21Data
+{
+    BACKGROUND-COLOR: #e2ffef
+}
+.rptSetupSection
+{
+    COLOR: white;
+    BACKGROUND-COLOR: black;
+    TEXT-ALIGN: center
+}
+.TGdate
+{
+    BACKGROUND-COLOR: lightgoldenrodyellow
+}
+.ReportTitle
+{
+    FONT-SIZE: small;
+    COLOR: black;
+    FONT-FAMILY: Times New Roman
+}
+.reportwarning
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: x-small;
+    CURSOR: hand;
+    COLOR: darkorange;
+    FONT-FAMILY: Times New Roman;
+    TEXT-ALIGN: right;
+    TEXT-VALIGN: middle
+}
+.StdTableParams
+{
+    BORDER-RIGHT: 1px solid;
+    BORDER-TOP: 1px solid;
+    BORDER-LEFT: 1px solid;
+    WIDTH: 100%;
+    BORDER-BOTTOM: 1px solid;
+    Rules: ALL;
+    cellPadding: 3;
+    cellSpacing: 1
+}
+.SelLineListboxTitle
+{
+    FONT-WEIGHT: 600;
+    FONT-SIZE: x-small;
+    FONT-FAMILY: MS Sans Serif;
+    TEXT-ALIGN: left
+}
+.ReportHeading
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: x-small;
+    COLOR: black;
+    FONT-FAMILY: Times New Roman
+}
+.inprt
+{
+    TEXT-ALIGN: right
+}
+.tgW1
+{
+    BACKGROUND-COLOR: #ffcc66;
+    TEXT-ALIGN: right
+}
+.tgW2
+{
+    BACKGROUND-COLOR: #ff9933;
+    TEXT-ALIGN: right
+}
+.bluelist
+{
+    FONT-WEIGHT: bolder;
+    CURSOR: hand;
+    COLOR: blue;
+    FONT-FAMILY: Times New Roman;
+    TEXT-DECORATION: underline
+}
+.RequiredInput
+{
+    COLOR: black;
+    BACKGROUND-COLOR: #ccddff
+}
+.SubHeadingText
+{
+    FONT-WEIGHT: 600;
+    FONT-SIZE: small;
+    TEXT-TRANSFORM: capitalize;
+    COLOR: dimgray;
+    FONT-FAMILY: MS Sans Serif;
+    TEXT-ALIGN: left
+}
+.MediaText
+{
+    FONT-WEIGHT: 600;
+    COLOR: #316464;
+    FONT-FAMILY: MS Sans Serif;
+    TEXT-ALIGN: center
+}
+.M1
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: small;
+    COLOR: crimson;
+    PADDING-TOP: 0pt;
+    FONT-FAMILY: Eras Medium ITC;
+    TEXT-ALIGN: left
+}
+.M2
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: xx-small;
+    COLOR: #c0ff3e;
+    PADDING-TOP: 4px;
+    FONT-FAMILY: System;
+    TEXT-DECORATION: none
+}
+.M3
+{
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: xx-small;
+    PADDING-BOTTOM: 0px;
+    COLOR: yellow;
+    PADDING-TOP: 0px;
+    FONT-FAMILY: MS Sans Serif;
+    TEXT-DECORATION: none
+}
+.highlite
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: xx-small;
+    COLOR: #66ff99;
+    FONT-FAMILY: MS Sans Serif;
+    BACKGROUND-COLOR: blue;
+    TEXT-DECORATION: none
+}
+.required
+{
+    FONT-WEIGHT: bold;
+    COLOR: red;
+    BACKGROUND-COLOR: gainsboro;
+    TEXT-ALIGN: right
+}
+.optional
+{
+    FONT-WEIGHT: bold;
+    BACKGROUND-COLOR: gainsboro;
+    TEXT-ALIGN: right
+}
+.tableEdit
+{
+    BACKGROUND-COLOR: whitesmoke
+}
+.tablecolheadings
+{
+    BORDER-RIGHT: tan thin;
+    BORDER-TOP: tan thin;
+    FONT-WEIGHT: bolder;
+    BORDER-LEFT: tan thin;
+    COLOR: black;
+    BORDER-BOTTOM: tan thin solid;
+    BACKGROUND-COLOR: transparent;
+    TEXT-ALIGN: left
+}
+.basictext
+{
+    COLOR: black;
+    FONT-FAMILY: Times New Roman
+}
+.subtable
+{
+    BACKGROUND-COLOR: moccasin
+}
+.buttons
+{
+    BACKGROUND-COLOR: palegoldenrod
+}
+.subTableHead
+{
+    FONT-WEIGHT: bolder;
+    BACKGROUND-COLOR: gainsboro
+}
+.bodytxt
+{
+    FONT-SIZE: x-small
+}
+.ErrMsg
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: x-small;
+    COLOR: red
+}
+.tableDisplay
+{
+    BACKGROUND-COLOR: whitesmoke
+}
+.stdBody
+{
+    FONT-SIZE: x-small;
+    COLOR: black;
+    BACKGROUND-COLOR: steelblue
+}
+.gray
+{
+    BACKGROUND-COLOR: #cccccc
+}
+.btn
+{
+    PADDING-RIGHT: 0pt;
+    FONT-SIZE: x-small;
+    MARGIN-LEFT: 0pt;
+    CURSOR: hand;
+    COLOR: black;
+    TEXT-INDENT: 0pt;
+    MARGIN-RIGHT: 0pt;
+    PADDING-TOP: 0pt;
+    FONT-FAMILY: Times New Roman;
+    BACKGROUND-COLOR: #c9ffc9;
+    TEXT-ALIGN: left
+}
+.btn2
+{
+    FONT-SIZE: x-small;
+    CURSOR: hand;
+    FONT-FAMILY: Times New Roman;
+    BACKGROUND-COLOR: #66ff99
+}
+.btn3
+{
+    FONT-SIZE: x-small;
+    CURSOR: hand;
+    FONT-FAMILY: Times New Roman;
+    BACKGROUND-COLOR: #00cc66
+}
+.pgbreak
+{
+    PAGE-BREAK-BEFORE: always
+}
+.InfoText
+{
+    FONT-WEIGHT: bolder;
+    COLOR: yellow
+}
+H6
+{
+    PAGE-BREAK-AFTER: always
+}
+.reportDisplay
+{
+    FONT-SIZE: xx-small;
+    BACKGROUND-COLOR: whitesmoke
+}
+.blueMsg
+{
+    FONT-WEIGHT: bold;
+    COLOR: blue
+}
+.mainHeadingText
+{
+    FONT-SIZE: medium;
+    COLOR: blue
+}
+.usermessagetext
+{
+    FONT-WEIGHT: bolder;
+    COLOR: green
+}
+.errormessagetext
+{
+    FONT-WEIGHT: bolder;
+    COLOR: red
+}
+.errorpage
+{
+    COLOR: yellow;
+    BACKGROUND-COLOR: midnightblue
+}
+.Point
+{
+    CURSOR: hand
+}
+.DontPoint
+{
+    CURSOR: default
+}
+.UnHighlight
+{
+    CURSOR: default;
+    BACKGROUND-COLOR: #ffffff
+}
+.Highlight
+{
+    CURSOR: hand;
+    BACKGROUND-COLOR: lavender
+}
+.HyperLook
+{
+    FONT-SIZE: 12px;
+    CURSOR: hand;
+    COLOR: blue;
+    FONT-STYLE: italic;
+    TEXT-DECORATION: underline
+}
+.HyperOver
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12px;
+    CURSOR: hand;
+    COLOR: blue;
+    FONT-STYLE: italic;
+    TEXT-DECORATION: underline
+}
+.HeadingFont
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: medium;
+    COLOR: navy;
+    FONT-FAMILY: Arial
+}
+.DataLabelFont
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: x-small;
+    FONT-FAMILY: Arial
+}
+.DataFont
+{
+    FONT-SIZE: x-small;
+    FONT-FAMILY: MS Sans Serif
+}
+.DataLabelFontTNR
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: x-small;
+    FONT-FAMILY: Times New Roman
+}
+.DataFontTNR
+{
+    FONT-SIZE: x-small;
+    FONT-FAMILY: Times New Roman
+}
+.Selected
+{
+    BACKGROUND-COLOR: lightcyan
+}
+.HeadingBackground
+{
+    BACKGROUND-COLOR: moccasin
+}
+.greenshading
+{
+    BACKGROUND-COLOR: lightgreen
+}
+.noshading
+{
+    BACKGROUND-COLOR: white
+}
+.strike
+{
+    TEXT-DECORATION: line-through
+}
+.nostrike
+{
+    TEXT-DECORATION: none
+}
+.sum
+{
+    FONT-SIZE: x-small;
+    COLOR: blue;
+    FONT-FAMILY: 'Times New Roman';
+    TEXT-ALIGN: right
+}
+.smFont
+{
+    FONT-SIZE: 3pt;
+    COLOR: black;
+    FONT-FAMILY: 'Times New Roman'
+}
+.requiredwarning
+{
+    FONT-WEIGHT: bold;
+    COLOR: red;
+    BACKGROUND-COLOR: #b4d6d6;
+    TEXT-ALIGN: right
+}
+.optionalwarning
+{
+    FONT-WEIGHT: bold;
+    BACKGROUND-COLOR: #b4d6d6;
+    TEXT-ALIGN: right
+}
+.tableEditwarning
+{
+    BACKGROUND-COLOR: #e5fbfa
+}
+.buttonswarning
+{
+    BACKGROUND-COLOR: #78fcfe
+}
+
+
+
+
+

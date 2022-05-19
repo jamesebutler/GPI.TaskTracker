@@ -1,0 +1,68 @@
+﻿<%@ Master Language="VB" CodeFile="TaskTrackerPopup.master.vb" Inherits="MasterPages_TaskTrackerPopup" %>
+
+<!DOCTYPE html>
+<%@ Register Src="~/User Controls/ucCultureSelection.ascx" TagName="CultureSelection"
+    TagPrefix="IP" %>
+<html>
+<head id="pageHeader" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Graphic Packaging | EHS Task Tracking</title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body onload="LoadEvents();">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="_scriptManager" AsyncPostBackTimeout="10000"
+            EnablePageMethods="false" LoadScriptsBeforeUI="true" ScriptMode="release" runat="server"
+            EnablePartialRendering="true">
+        </asp:ScriptManager>
+        <div class="container-fluid">        
+            <div id="_alertInfo" runat="server" class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2>
+                    <asp:Label ID="_lblAlertTitle" ClientIDMode="Static" runat="server"></asp:Label></h2>
+                <asp:Label ID="_lblAlertInfo" runat="server" ClientIDMode="Static"></asp:Label>
+            </div>
+            <div id="_dvMainContent" runat="server" style="min-height: 500px; text-align: left; vertical-align: top;">
+                <asp:ContentPlaceHolder ID="_cphMainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>    
+        <div id="errorModal" class="modal fade errorModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="valModalTitle">
+                            <asp:Localize runat="server" Text="<%$IPResources:Global,Validation Warning%>"></asp:Localize></h4>
+                    </div>
+                    <div class="modal-body" id="valModalBody">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <div id="backgroundModal" class="modal fade errorModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <h4 class="modal-title" id="errorModalTitle">
+                        <asp:Localize runat="server" Text="<%$IPResources:Global,Please Wait%>"></asp:Localize></h4>
+                    <div class="modal-body" >
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    </form>
+</body>
+</html>

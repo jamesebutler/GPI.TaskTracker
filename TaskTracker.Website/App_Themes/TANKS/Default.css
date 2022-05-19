@@ -1,0 +1,634 @@
+﻿.FixedHeader_notready
+{
+    position:fixed;
+    top:0;
+    z-index:1500;
+    width:100%;
+}
+/*IRIS*/
+/* Layout Styles */
+#layout_header
+{
+    width: 100%;
+    /*max-width:1400px;*/
+    height: 89px;
+    background-color: Black;
+    border-bottom: 10px  solid #CCCC99;
+}
+#layout_logos
+{
+    float: left;
+    cursor: hand;
+    vertical-align: bottom;
+} 
+#layout_iplogo
+{
+    background-image: url(Images/IPLogo_Black.gif);
+    background-repeat: no-repeat;
+    width: 350px;    
+    height: 40px;
+} 
+/*#layout_websitelogo
+{
+    display: none;
+}*/
+#layout_websitelogo
+{
+    background-image: url(Images/TaskTrackerLogo_Black.gif);
+    background-repeat: no-repeat;
+    width: 192px;
+    height: 30px;    
+    cursor: hand;
+}
+#layout_banner
+{
+    /*background-image: url(Images/IRISbanner.jpg);     background-repeat: no-repeat;*/
+    float: left;
+    text-align:center;
+    height:89px;
+    
+}
+#layout_utility
+{
+    background-color: #000000;
+    width: 200px;
+    height: 70px; /*float: left;*/
+    display: none;
+}
+#layout_main
+{
+    background-color: #ffffff;
+    border-top: 0px;/*10px solid #CCCC99;*/
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+}
+#layout_mainfull
+{
+    border-top: 1px solid #FFFFFF;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+}
+#layout_navigation
+{
+    position: relative;
+    top: 0px;
+    left: 1px;
+    width: 100%;
+    /*max-width:1400px;*/ 
+}
+#layout_contentwrapper
+{
+    padding: 0px 0px 0px 0px;
+    margin:  5px 0px 1px 1px;
+    background-color: #FFFFFF;
+    font-size: 0.8em;
+    border-style: solid;
+    border-left-color: #CCCC99;
+    border-right-color: #CCCC99;
+    border-top-color: #CCCC99;
+    border-bottom-color: #CCCC99;
+    border-width: 1px;
+    width: 100%;
+    /*max-width:1400px;*/ 
+    height: 100%;
+    /*margin-top:110px;*/
+}
+#layout_contentwrapperfull
+{
+    padding: 8px 0px 8px 8px;
+    height: 100%;
+    /*max-width:1400px;*/ 
+    background-color: #FFFFFF;
+    font-size: 0.8em;
+}
+#layout_content
+{
+    width: 100%;
+    /*max-width:1400px;*/ 
+}
+#layout_contentfull
+{
+    width: 992px;
+}
+#layout_footer
+{
+    width: 100%;
+    
+  /*max-width:1400px;*/ 
+    text-align: center;
+    font-size: 0.7em;
+    color: #999999;
+    border-top: #CCCC99 1px solid;
+}
+#layout_welcome
+{
+    display: none;
+}
+#layout_banner_image
+{
+    width: 550px;
+    height: 70px;
+    top:5px;
+    position:relative;
+}
+
+/* Form Styles */
+.form thead
+{
+    font-weight: bolder;
+    font-size: 0.9em;
+    background-color: #ff0000;
+    color: #333333;
+    text-indent: 2pt;
+}
+
+.form .labelcell
+{
+    font-weight: bold;
+    font-size: 0.85em;
+    text-indent: 2pt;
+    text-align: right;
+    vertical-align: text-top;
+    border-color: #006633;
+    border-style: solid;
+    border-top-width: 0px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    padding-top: 4px;
+}
+.form tbody td
+{
+    border-color: #cccccc;
+    border-style: solid;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+}
+/*End IRIS*/
+.break-word {
+  word-wrap: break-word; 
+}
+.body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 0 0 0; 
+}
+/*Border Style*/
+.Border
+{
+    
+    color: Black;
+    font-weight: normal;
+}
+
+.RowBorderOdd {
+    background-color:#f9f9f9;
+}
+.RowBorderEven {
+    background-color:#F0F0F6;
+}
+
+table.tablesorter tbody tr.odd td {
+	background-color:#FFF;
+}
+table.tablesorter tbody tr.even td {
+	background-color:#CCC;
+}
+
+.OuterBorder
+{
+    border-style: solid;
+    border-left-color: #CCCC99;
+    border-right-color: #CCCC99;
+    border-top-color: #CCCC99;
+    border-bottom-color: #CCCC99;
+    border-width: 1px;
+    width: 100%;
+    height: 100%;
+}
+.BorderLeft
+{
+    border-style: solid;
+    border-left-color: #CCCC99;
+    border-right-color: #ffffff;
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+.BorderRight
+{
+    border-style: solid;
+    border-left-color: #ffffff;
+    border-right-color: #CCCC99;
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+.BorderSecondary
+{
+    background-color: #F0F0E0;/*#cccccc;*/
+}
+.BorderHeader
+{
+    background-color: #3baae3 !important;
+    color: White;
+    font-weight: bold;
+}
+.BorderWhite
+{
+    background-color: White;
+}
+.Button
+{
+    background: #d7ebf9 url(images/ui-bg_glass_80_d7ebf9_1x400.png) 50% 50% repeat-x;
+    color: #3baae3;
+    font-weight: bold;
+    cursor: hand;
+    border-color: #3baae3 !important;
+    height:30px;
+  
+}
+.ButtonLabel{
+     background: #d7ebf9 url(images/ui-bg_glass_80_d7ebf9_1x400.png) 50% 50% repeat-x;
+    color: #3baae3;
+    font-weight: bold;
+    cursor: hand;
+    border-color: #3baae3 !important;
+}
+.ButtonHover, .Button:hover
+{
+    background: #3baae3 url(images/ui-bg_glass_50_3baae3_1x400.png) 50% 50% repeat-x;
+    color: White;
+    font-weight: bold;
+    cursor: hand;
+     border-color: #3baae3 !important;
+ 
+}
+.ButtonBlack
+{
+    background-color: #000000;
+    color: White;
+    font-weight: bold;
+    cursor: hand;
+}
+ input {
+    border-color: #3baae3 !important;
+    border-width: 1px;
+}
+ textarea{
+       border-color: #3baae3 !important;
+    border-width: 1px;
+ }
+.Button input{
+    border-color: #3baae3 !important;
+    border-width: 0px;
+   
+}
+.Message
+{    
+    color: 3baae3;
+    font-weight: bold;
+}
+.Input
+{
+    background-color: 3baae3;
+}
+
+
+Table.Main
+{
+    width: 100%;
+}
+td
+{
+    font-size: 12px;
+    font-family: Verdana;
+}
+th
+{
+    font-size: 12px;
+    font-family: Verdana;
+    font-weight: bold;
+}
+.Banner
+{
+    background-color: Black;
+    padding-left: 0px;
+    padding-top: 0px;
+    vertical-align: top;
+    text-align: left;
+    font-size: medium;
+    width: 100%;
+    font-family: Verdana;
+}
+.Header
+{
+    background-color: Black;
+    padding-left: 0px;
+    padding-top: 0px;
+    vertical-align: top;
+    text-align: center;
+    font-family: Verdana;
+    font-size: 12px;
+}
+/*Menu */
+.mainMenuBack, .mainMenuBack tr
+{
+    height: 24px;
+}
+.mainMenuBack
+{
+    color: White;
+    text-align: center;
+    font-weight: bold;
+    background-color: #ffffff;
+}
+.mainMenuBack a:Link, .mainMenuBack a:Visited
+{
+    text-decoration: none;
+    color: White;
+}
+.mainMenuBackHover
+{
+    background-color: #CCCC99;
+    text-decoration: none;
+    color: White;
+}
+.mainMenuBack .normallink
+{
+    padding: 0px;
+    font-weight: bold;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #000000;
+}
+.mainMenuBack .selectedlink
+{
+    padding: 0px;
+    text-align: center;
+    background-color: #CCCC99;
+    color: #000000;
+}
+
+/* Label Styles */
+
+.labelerror
+{
+    color: Red;
+}
+
+.labelfooter
+{
+    width: 100%;
+   /*max-width:1400px;*/ 
+    text-align: center;
+    font-size: 0.7em;
+    color: #999999;
+    border-top: #CCCC99 1px solid;
+}
+
+.labellogin
+{
+    float: right;
+    text-align: right;
+    width: 100%;
+    color: #999999;
+}
+
+.labellanguage
+{
+    float: left;
+    text-align: left;
+    width: 50%;
+    color: #999999;
+}
+
+.Warning
+{
+    color: Red;
+}
+
+legend { color: #ffffff; font-weight:bold;padding-left:10px; padding-right:10px; padding-top:5px;border: 1px solid #3baae3; vertical-align:top;border-top-color:#3baae3;border-top-width:1px;margin-top:0px; padding-bottom:2px;background-color:#3baae3;font-size:100%}
+fieldset{ border-style:solid; border-width:thin; padding-left:4px; padding-right:4px; padding-top:10px; padding-bottom:10px; border-color:#000000; border-top-width:thick;font-size:100%}
+
+.modalBackground {background-color:Gray;filter:alpha(opacity=70);opacity:0.7; z-index:2000;}
+.modalPopup {background-color:#ffffdd;border-width:3px;border-style:solid;border-color:Gray;padding:3px;z-index:2100;}
+.modalPopupNoBorder {background-color:#ffffdd;border-width:0px;border-style:none;padding:0px;z-index:2100;}
+.ListSearchExtenderPrompt
+{    
+    background-color:White;
+    color:Gray;
+    font-style:italic;  
+}
+
+button, input, optgroup, select, textarea {
+    color: #000000;
+}
+
+
+/* tables */
+table.tablesorter {
+	font-family:arial;
+	background-color: #F0F0F6;
+	margin:10px 5px 15px;
+	font-size: 8pt;
+	width: 100%;
+	text-align: left;
+}
+table.tablesorter thead tr th, table.tablesorter tfoot tr th, table.tablesorter th {
+	background-color: #3baae3;
+	border: 1px solid #FFF;
+	font-size: 8pt;
+	padding: 4px;
+}
+table.tablesorter thead tr .header, table.tablesorter th {
+	background-image: url('Images/bg_FFF.gif');
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+table.tablesorter tbody td {
+	color: #000000;
+	padding: 4px;
+	
+	vertical-align: top;
+}
+table.tablesorter tbody tr.odd td {
+	background-color:#FFF;
+}
+table.tablesorter tbody tr.even td {
+	background-color:#CCC;
+}
+table.tablesorter tr:nth-child(odd){color: #000; background: #FFF}
+table.tablesorter tr:nth-child(even){color: #000; background: #CCC}
+table.tablesorter .even {
+	background-color: #CCC;
+}
+table.tablesorter .odd {
+	background-color: #FFF;
+}
+
+table.tablesorter tbody tr td {
+	
+}
+table.tablesorter thead tr .headerSortUp {
+	background-image: url('Images/asc_FFF.gif');
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url('Images/desc_FFF.gif');
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+background-color: 3baae3;
+}
+
+.FileUpload{
+   
+}
+
+.FileUploadButton{
+     display:none;
+}
+
+/*Start Dropin Content*/
+#dropinboxv2cover{
+	width: 340px; /*change width to desired */
+	height: 120px;  /*change height to desired. REMOVE if you wish box to be content's natural height */
+	position:absolute; /*Don't change below 4 rules*/
+	z-index: 100;
+	overflow:hidden;
+	visibility: hidden;
+	}
+
+	#dropinboxv2{
+	width: 330px; /*change width to above width-20. */
+	height: 100px; /*change height to above height-20. REMOVE if you wish box to be content's natural height*/
+	border: 2px solid cccccc; /*Customize box appearance*/
+	background-color: Yellow;
+	padding: 4px;
+	position:absolute; /*Don't change below 3 rules */
+	left: 0;
+	top: 0;
+}
+/*End DropIn Content */
+a.toolTip{
+    position:relative; /*this is the key*/
+    z-index:2100;   
+    color:#000;    
+    text-decoration:none}
+ 
+a.toolTip:hover{z-index:2500;}
+ 
+a.toolTip .tip{display: none}
+ 
+a.toolTip:hover .tip{ /*the span will display just on :hover state*/
+    display:block;
+    position:absolute;
+    top:2em; left:0; width:25em; 
+    Font-Size: Medium;
+    border:1px solid #000;
+    background-color:3baae3; 
+    color:#fff;
+    width:330px;
+    text-align: center}
+
+a.tootTip .hidetip{display:none}
+
+a.tootTip:hover .hidetip{display:none}
+
+#message_box {
+position: absolute;
+top: 0; left: 0;
+z-index: 10;
+background:#ffc;
+padding:5px;
+border:2px solid 3baae3;
+text-align:center;
+font-weight:bold;
+width:99%;
+}
+
+.BackColorTab
+        {
+            font-family:Verdana, Arial, Courier New;
+            font-size: 10px;
+            color:Gray;
+            background-color:Silver; 
+        }
+
+.yui .ajax__tab_header 
+{
+    font-family:arial,helvetica,clean,sans-serif;
+    font-size:small;
+    font-weight:bold;
+    border-bottom:solid 5px 3baae3;
+}
+.yui .ajax__tab_header .ajax__tab_outer 
+{
+    background-color:#CCCC99;
+    margin:0px 6px 0px 0px;
+    padding:2px 2px 2px 2px;
+    vertical-align:bottom;
+    border:solid 0px #ffffff;
+    border-bottom-width:0px;
+}
+.yui .ajax__tab_header .ajax__tab_tab
+{    
+    color:#000;
+    padding:0.35em 0.75em;    
+    margin-right:0.01em;
+}
+.yui .ajax__tab_hover .ajax__tab_outer 
+{
+    background-color:3baae3;
+    color:#000;
+}
+.yui .ajax__tab_active .ajax__tab_tab 
+{
+    color:#fff;
+}
+.yui .ajax__tab_active .ajax__tab_outer
+{
+    background-color:3baae3;
+}
+.yui .ajax__tab_body 
+{
+    font-family:verdana,tahoma,helvetica;
+    font-size:90%;
+    padding:0.25em 0.5em;
+    background-color:#ffffff;    
+    border:solid 1px 3baae3;
+    border-top-width:0px;    
+}
+
+.statusImg
+{
+    height:15px;
+    width:15px;
+    border:0px;
+}
+.autocomplete_completionListElement {
+	background-color: inherit;
+	border: 0px solid buttonshadow;
+	color: windowtext;
+	height: 200px;    
+	list-style-type: none;
+	margin: 0 !important;
+	overflow: auto;
+	text-align: left;
+}
+.autocomplete_highlightedListItem {
+	background-color: #FFFF99;
+	color: black;
+	padding: 1px;
+}
+.autocomplete_listItem {
+	background-color: window;
+	color: windowtext;
+	padding: 1px;
+}
+.fixedWidthFont
+    {
+        font-family: Courier New;
+    }

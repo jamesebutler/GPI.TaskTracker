@@ -1,0 +1,124 @@
+<%@ Master Language="VB" CodeFile="~/MasterPages/TaskTracker.master.vb" Inherits="TaskTrackerMaster" %>
+
+<%@ Register Src="~/User Controls/ucCultureSelection.ascx" TagName="ucCultureSelection"   TagPrefix="IP" %>
+<%@ Register Src="~/User Controls/UCBannerImage.ascx" TagName="BannerImage"   TagPrefix="IP" %> 
+<%@ Register Src="~/User Controls/ucLDAPLogin.ascx" TagName="IPLogin"   TagPrefix="IP" %> 
+<%@ Register Src="~/User Controls/MessageBox.ascx" TagName="MessageBox"   TagPrefix="IP" %> 
+
+
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Graphic Packaging International | EHS Task Tracking</title>
+    <link rel='stylesheet' type='text/css' media="print" href='Scripts/fullcalendar/fullcalendar.print.css' />
+   
+</head>
+<body onload="LoadEvents();">
+    <div class="container-fluid">
+        <form id="form1" runat="server">
+            <asp:ScriptManager ID="_scriptManager" AsyncPostBackTimeout="10000"
+                EnablePageMethods="false" LoadScriptsBeforeUI="true" ScriptMode="release" runat="server"
+                EnablePartialRendering="true">
+            </asp:ScriptManager>
+            <asp:Panel ID="_pnlUserMessage" runat="server" Visible="false">
+                <div id="message_box">
+                    <div id="close_message" style="float: right; cursor: pointer">
+                        <asp:Label runat="server" Text="<%$IPResources:Global,Close %>"></asp:Label>
+                    </div>
+                    <asp:Label ID="_lblUserMessage" runat="server" Text="<%$IPResources:Global,SiteUpdateNotice %>"></asp:Label>
+                </div>
+            </asp:Panel>
+           
+
+            <div id="_dvHeader" class="FixedHeader" runat="server">
+                <div id="layout_header">
+                    <div id="layout_logos">
+                        <div id="layout_iplogo">
+                        </div>
+                        <div id="layout_websitelogo">
+                        </div>
+                    </div>
+                    <div id="layout_banner">
+                        <div id="layout_banner_image">
+                            <IP:BannerImage ID="_imgBanner" runat="server" />  
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="layout_main">
+
+                <div id="_dvMenu" class="LeftMenu" runat="server">
+                    <div id="layout_navigation">
+                        <asp:Menu ID="_mnuLeftNav" runat="server" SkinID="mainMenu" DynamicMenuStyle-ForeColor="white" ForeColor="white" DynamicMenuItemStyle-Height="24px" DynamicMenuItemStyle-CssClass="mainMenuItem">
+                        </asp:Menu>
+                    </div>
+                </div>
+
+                <div id="layout_contentwrapper">
+                    <div id="layout_content">
+                        <div id="_dvWelcome" runat="server">
+                            <div id="layout_welcome">
+                                <asp:Label ID="_lblWelcome" CssClass="contextheader" runat="server" Width="100%"
+                                    Text="<%$IPResources:Global,Welcome %>"></asp:Label><br />
+                                <br />
+                            </div>
+                        </div>
+                        <div id="_dvMainContent" runat="server" class="OuterBorder" style="min-height: 500px; text-align: left; vertical-align: top;">
+                            <asp:ContentPlaceHolder ID="_cphMainContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="_dvFooter" runat="server">
+                <div id="layout_footer">
+                    <IP:Footer ID="Footer1" runat="server" />
+                    
+                </div>
+                <br />
+                <div id="label_footer" class="labelfooter">
+                    <div class="labellanguage">
+                        <IP:ucCultureSelection ID="ucCultureSelection1" runat="server" />
+                        <asp:Label Text="jeb" runat="server"></asp:Label>
+                    </div>
+                    <div class="labellogin">
+                        <IP:IPLogin ID="_login" runat="server" />
+                    </div>
+                </div>
+                <br />
+                <IP:IPThemes ID="_themes" runat="server" Visible="true" />
+            </div>
+
+            <asp:UpdatePanel ID="_udpBusy" runat="server" UpdateMode="always">
+                <ContentTemplate>
+                    <ajaxToolkit:ModalPopupExtender ID="_mpeBusy" runat="server" TargetControlID="_imbBusy"
+                        PopupControlID="_pnlBusy" BackgroundCssClass="modalBackground" DropShadow="false"
+                        OkControlID="_btnCloseBusy" CancelControlID="_btnCloseBusy">
+                    </ajaxToolkit:ModalPopupExtender>
+                    <asp:Button Visible="false" ID="_btnBusy" runat="server" />
+                    <asp:Panel ID="_pnlBusy" runat="server" Width="0" Height="0" Style="display: none;">
+                        <div visible="false" style="display: none; visibility: hidden">
+                            <asp:Button ID="_btnCloseBusy" runat="server" Text="Cancel" />
+                        </div>
+                    </asp:Panel>
+                    <div visible="false" style="display: none; visibility: hidden">
+                        <asp:ImageButton ImageUrl="~/Images/blank.gif" runat="server" ID="_imbBusy" Visible="true" />
+                    </div>
+                    <IP:MessageBox ID="_AlertMessage" runat="server" ButtonType="OK" />
+                    <div id="dialog-confirm" title="Please Confirm" style="display: none;">
+                        <p style="text-align: left;">
+                            <asp:Label runat="server" Text="<%$IPResources:Global,LeavePageConfirmation? %>"></asp:Label>
+                        </p>
+                    </div>
+                    <IP:MessageBox ID="_msgToUser" runat="server" AllowPostback="false" ButtonType="oK"
+                        Message="" Title="<%$IPResources:Global,Task Tracker %>" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            
+        </form>
+    </div>
+</body>
+</html>

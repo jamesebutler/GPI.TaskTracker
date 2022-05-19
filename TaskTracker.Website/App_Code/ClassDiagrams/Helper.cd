@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="HelperDAL">
+    <Position X="0.5" Y="0.5" Width="8.75" />
+    <TypeIdentifier>
+      <FileName>App_Code\DataAccessLayer\HelperDAL.vb</FileName>
+      <HashCode>AABAAAAAAAAAAAgAAAAAAAAAAACAABQAAAAEAAAACAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

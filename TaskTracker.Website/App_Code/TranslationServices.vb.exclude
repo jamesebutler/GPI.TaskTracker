@@ -1,0 +1,61 @@
+﻿Imports IP.MicrosoftTranslator
+
+Namespace Translation
+
+    Public Module TranslationServices
+        Public Function TranslateUsingApi(ByVal textToTranslate As String, Optional returnEmptyIfDuplicate As Boolean = False) As String
+            Dim currentLanguage As String = Threading.Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName
+            Return TranslateUsingApi(textToTranslate, currentLanguage, returnEmptyIfDuplicate)
+        End Function
+
+        Public Function TranslateUsingApi(ByVal textToTranslate As String, ByVal currentLanguage As String, Optional returnEmptyIfDuplicate As Boolean = False) As String
+                Dim enableOndemandLocalization As Boolean = True
+
+                If String.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings("EnableOndemandLocalization")) Then
+                    enableOndemandLocalization = False
+                Else
+                    Boolean.TryParse(System.Configuration.ConfigurationManager.AppSettings("EnableOndemandLocalization"), EnableOndemandLocalization)
+                End If
+                Return TranslateUsingApi(textToTranslate, currentLanguage, enableOndemandLocalization, returnEmptyIfDuplicate)                
+        End Function
+
+
+        Public Function TranslateUsingApi(ByVal textToTranslate As String, ByVal currentLanguage As String, enableOndemandLocalization As Boolean, Optional ByVal returnEmptyIfDuplicate As Boolean = False) As String
+            Try
+                'Return textToTranslate
+
+                If enableOndemandLocalization = False Then
+                    If returnEmptyIfDuplicate = True Then Return String.Empty
+                    Return textToTranslate
+                End If
+                Dim translator As New TranslatorHelper()
+
+                Dim translatedText As String = translator.TranslateText(textToTranslate, "", currentLanguage)
+
+
+                If translatedText = "Quota Exceeded" Then
+                    IP.Bids.SharedFunctions.HandleError("Microsoft Translation", "Microsoft Translation Services quota has been reached", Nothing)
+                    Return ""
+                End If
+                If returnEmptyIfDuplicate Then
+                    If textToTranslate.Trim = translatedText.Trim Then
+                        Return String.Empty
+                    Else
+                        Return translatedText
+                    End If
+                Else
+                    Return translatedText
+                End If
+            Catch ex As Exception
+                IP.Bids.SharedFunctions.HandleError(, , ex)
+                Return ""
+            End Try
+        End Function
+
+        Public Function DetectLanguage(ByVal textToDetect As String) As String
+            Dim translator As New TranslatorHelper()
+            Return translator.DetectLanguageOfText(textToDetect)
+        End Function
+    End Module
+
+End Namespace

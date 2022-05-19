@@ -1,0 +1,280 @@
+﻿/*IRIS*/
+/* Layout Styles */
+#layout_header {
+	width: 100%;
+	height: 62px;
+	background-color: Black;
+	
+}
+#layout_logos {
+	float: left;
+	cursor: hand;
+	vertical-align: bottom;
+}
+#layout_iplogo {
+	background-image: url(Images/IPLogo_Black.gif);
+	background-repeat: no-repeat;
+	width: 250px;
+	height: 59px;
+}
+#layout_websitelogo {	
+	display:none;
+}
+#layout_banner {
+	/*background-image: url(Images/IRISbanner.jpg);     background-repeat: no-repeat;*/
+    
+	float: left;
+}
+#layout_utility {
+	background-color: #000000;
+	width: 200px;
+	height: 59px;
+	/*float: left;*/
+	display:none;
+}
+#layout_main {
+	background-color: #ffffff;
+	border-top: 10px solid #D2F17C;
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+}
+#layout_mainfull {
+	border-top: 1px solid #FFFFFF;
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+}
+#layout_navigation {
+	position: relative;
+	top: 0px;
+	left: 1px;
+	width: 100%;
+}
+#layout_contentwrapper {
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 1px 1px;
+	background-color: #FFFFFF;
+	font-size: 0.8em;
+	border-style: solid;
+	border-left-color: #D2F17C;
+	border-right-color: #D2F17C;
+	border-top-color: #D2F17C;
+	border-bottom-color: #D2F17C;
+	border-width: 1px;
+	width: 100%;
+	height: 100%;
+}
+#layout_contentwrapperfull {
+	padding: 8px 0px 8px 8px;
+	height: 100%;
+	background-color: #FFFFFF;
+	font-size: 0.8em;
+}
+#layout_content {
+	width: 100%;
+}
+#layout_contentfull {
+	width: 992px;
+}
+#layout_footer {
+	width: 100%;
+	text-align: center;
+	font-size: 0.7em;
+	color: #999999;
+	border-top: #D2F17C 1px solid;
+}
+#layout_welcome
+{
+    display:none;
+}
+#layout_banner_image
+{   
+    width: 550px;
+	height: 59px;
+	
+}
+
+/* Form Styles */
+.form thead
+{
+    font-weight: bolder;
+    font-size: 0.9em;
+    background-color: #b2d1c1;
+    color: #333333;
+    text-indent: 2pt;
+}
+
+.form .labelcell
+{
+    font-weight: bold;
+    font-size: 0.85em;
+    text-indent: 2pt;
+    text-align: right;
+    vertical-align: text-top;
+    border-color: #006633;
+    border-style: solid;
+    border-top-width: 0px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    padding-top: 4px;
+}
+.form tbody td
+{
+    border-color: #cccccc;
+    border-style: solid;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+}
+/*End IRIS*/
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 2px;
+}
+/*Border Style*/
+.Border {
+	background-color: #D2F17C;
+}
+
+.OuterBorder {
+	border-style: solid;
+	border-left-color: #D2F17C;
+	border-right-color: #D2F17C;
+	border-top-color: #D2F17C;
+	border-bottom-color: #D2F17C;
+	border-width: 1px;
+	width: 100%;
+	height: 100%;
+}
+.BorderLeft {
+	border-style: solid;
+	border-left-color: #D2F17C;
+	border-right-color: #ffffff;
+	border-top-color: #ffffff;
+	border-bottom-color: #ffffff;
+}
+.BorderRight {
+	border-style: solid;
+	border-left-color: #ffffff;
+	border-right-color: #D2F17C;
+	border-top-color: #ffffff;
+	border-bottom-color: #ffffff;
+}
+.BorderSecondary {
+	background-color: #cccccc;
+}
+.BorderHeader
+{
+    background-color :Black;
+     color:White;
+    font-weight:bold;
+}
+.BorderWhite {
+	background-color: White;
+}
+.Button{background-color:#8A2020;color:White;font-weight:bold;cursor:hand;}
+.ButtonHover,.Button:hover{background-color:#D2F17C;color:Black;font-weight:bold;cursor:hand;}    
+.ButtonBlack{background-color:#000000;color:White;font-weight:bold;cursor:hand;}
+Table.Main {
+	width: 100%;
+}
+td {
+	font-size: 12px;
+	font-family: Verdana;
+}
+th {
+	font-size: 12px;
+	font-family: Verdana;
+	font-weight: bold;
+}
+.Banner {
+	background-color: Black;
+	padding-left: 0px;
+	padding-top: 0px;
+	vertical-align: top;
+	text-align: left;
+	font-size: medium;
+	width: 100%;
+	font-family: Verdana;
+}
+.Header {
+	background-color: Black;
+	padding-left: 0px;
+	padding-top: 0px;
+	vertical-align: top;
+	text-align: center;
+	font-family: Verdana;
+	font-size: 12px;
+}
+/*Menu */
+.mainMenuBack, .mainMenuBack tr {
+	height: 24px;
+}
+.mainMenuBack {
+	color: White;
+	text-align: center;
+	font-weight: bold;
+	background-color: #ffffff;
+}
+.mainMenuBack a:Link, .mainMenuBack a:Visited {
+	text-decoration: none;
+	color: White;
+}
+.mainMenuBackHover {
+	background-color: #D2F17C;
+	text-decoration: none;
+	color: White;
+}
+.mainMenuBack .normallink {
+	padding: 0px;
+	font-weight: bold;
+	text-align: center;
+	color: #FFFFFF;
+	background-color: #000000;
+}
+.mainMenuBack .selectedlink {
+	padding: 0px;
+	text-align: center;
+	background-color: #D2F17C;
+	color: #000000;
+}
+
+/* Label Styles */
+
+.labelerror
+{
+    color: Red;
+}
+
+.labelfooter
+{
+    width: 100%;
+    text-align: center;
+    font-size: 0.7em;
+    color: #999999;
+    border-top: #D2F17C 1px solid;
+}
+
+.labellogin
+{
+    float:right;
+    text-align:right;
+    width: 50%;    
+    color: #999999; 
+}
+
+.labellanguage
+{
+    float:left;
+    text-align:left;
+    width: 50%;    
+    color: #999999;
+}
+
+.Warning
+{
+    color:Red;
+}

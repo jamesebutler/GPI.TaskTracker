@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="DocumentsAndLinksBLL">
+    <Position X="0.5" Y="0.5" Width="10.75" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessLogicLayer\DocumentsAndLinksBLL.vb</FileName>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAgAAAACAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IP.MEAS.BO.MTTDocuments">
+    <Position X="0.5" Y="2.25" Width="7.25" />
+    <TypeIdentifier>
+      <FileName>App_Code\BusinessObjects\TaskTrackerLists.vb</FileName>
+      <HashCode>AAAAAAAQAAAgAQAEAAIEAAAAAAAAQAAAAAAACBBAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>
