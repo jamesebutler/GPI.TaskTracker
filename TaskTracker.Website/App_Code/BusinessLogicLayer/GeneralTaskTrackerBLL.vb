@@ -197,6 +197,136 @@ Public NotInheritable Class GeneralTaskTrackerBll
         Return userRoleList
     End Function
 
+    Public Shared Function GetTaskItem(ByVal in_TaskITem As String) As DataSet
+        Dim userRoleList As System.Collections.Generic.List(Of EmployeeProfile) = Nothing
+        Dim paramCollection As New OracleParameterCollection
+        Dim param As New OracleParameter
+        Dim ds As System.Data.DataSet = Nothing
+        Dim dr As Data.DataTableReader = Nothing
+
+        Try
+            'Set Procedure Parameters
+            param = New OracleParameter
+            param.ParameterName = "in_TaskITem"
+            param.OracleDbType = OracleDbType.VarChar
+            param.Direction = Data.ParameterDirection.Input
+            param.Value = in_TaskITem
+            paramCollection.Add(param)
+
+            param = New OracleParameter
+            param.ParameterName = "rsTaskItem"
+            param.OracleDbType = OracleDbType.Cursor
+            param.Direction = Data.ParameterDirection.Output
+            paramCollection.Add(param)
+
+            ds = HelperDal.GetDSFromPackage(paramCollection, "mtttaskitem.GetTaskItem")
+
+            'If ds IsNot Nothing Then
+            '    If ds.Tables.Count = 1 Then
+            '        dr = ds.Tables(0).CreateDataReader
+            '    End If
+            'End If
+
+            'If dr IsNot Nothing Then
+            '    If dr.HasRows Then
+            '        userRoleList = New System.Collections.Generic.List(Of EmployeeProfile)
+            '        Dim employeeRecord As EmployeeProfile
+            '        Do While dr.Read
+            '            employeeRecord = New EmployeeProfile(DataClean(dr.Item("USERNAME")).ToUpper, DataClean(dr.Item("FIRSTNAME")).ToUpper, DataClean(dr.Item("LASTNAME")).ToUpper, DataClean(dr.Item("SITENAME")).ToUpper, DataClean(dr.Item("PLANTCODE")), DataClean(dr.Item("DOMAIN")))
+            '            userRoleList.Add(employeeRecord)
+            '        Loop
+            '    End If
+            'End If
+        Catch ex As Exception
+            IP.Bids.SharedFunctions.HandleError("GetTaskItem", "Error getting task item for [" & in_TaskITem & "]", ex)
+        Finally
+            GetTaskItem = ds
+            ds = Nothing
+        End Try
+        Return GetTaskItem
+    End Function
+
+
+    Public Shared Function GetUserNotiftyProfile(ByVal in_UserName As String,
+                                                 ByVal in_ProfileValuetype As String,
+                                                 ByVal in_EmailType As String,
+                                                 ByVal in_ROLESEQID As Integer) As String
+        Dim paramCollection As New OracleParameterCollection
+        Dim param As New OracleParameter
+        Dim ds As System.Data.DataSet = Nothing
+        Dim dr As Data.DataTableReader = Nothing
+        Dim outUserName As String = Nothing
+
+        Try
+            'Set Procedure Parameters
+            param = New OracleParameter
+            param.ParameterName = "in_UserName"
+            param.OracleDbType = OracleDbType.VarChar
+            param.Direction = Data.ParameterDirection.Input
+            param.Value = in_UserName
+            paramCollection.Add(param)
+
+            param = New OracleParameter
+            param.ParameterName = "in_ProfileValuetype"
+            param.OracleDbType = OracleDbType.VarChar
+            param.Direction = Data.ParameterDirection.Input
+            param.Value = in_ProfileValuetype
+            paramCollection.Add(param)
+
+
+            param = New OracleParameter
+            param.ParameterName = "in_EmailType"
+            param.OracleDbType = OracleDbType.VarChar
+            param.Direction = Data.ParameterDirection.Input
+            param.Value = in_EmailType
+            paramCollection.Add(param)
+
+
+            param = New OracleParameter
+            param.ParameterName = "in_ROLESEQID"
+            param.OracleDbType = OracleDbType.VarChar
+            param.Direction = Data.ParameterDirection.Input
+            param.Value = in_ROLESEQID
+            paramCollection.Add(param)
+
+            param = New OracleParameter
+            param.ParameterName = "sys_refcursor"
+            param.OracleDbType = OracleDbType.Cursor
+            param.Direction = Data.ParameterDirection.Output
+            paramCollection.Add(param)
+
+            ds = HelperDal.GetDSFromPackage(paramCollection, "SP_Get_UserNotiftyProfile")
+
+            If ds IsNot Nothing Then
+                If ds.Tables.Count = 1 Then
+                    dr = ds.Tables(0).CreateDataReader
+                End If
+            End If
+
+            If dr IsNot Nothing Then
+                If dr.HasRows Then
+                    'userRoleList = New System.Collections.Generic.List(Of EmployeeProfile)
+                    'Dim employeeRecord As EmployeeProfile
+                    Do While dr.Read
+                        outUserName = DataClean(dr.Item("USERNAME")).ToUpper
+
+                    Loop
+                End If
+            End If
+
+        Catch ex As Exception
+            IP.Bids.SharedFunctions.HandleError("GetUserNotiftyProfile", "Error getting task item for [" & in_UserName & "]", ex)
+        Finally
+            GetUserNotiftyProfile = outUserName
+            ds = Nothing
+        End Try
+        Return GetUserNotiftyProfile
+    End Function
+
+
+
+
+
     Public Shared Function DoesUserHaveUpdateAccess(ByVal userName As String, ByVal plantCode As String) As Boolean
         Dim adapter As New IP.TaskTrackerDAL.TanksTableAdapters.UserAccessTableAdapter
         Dim updateOrReadOnly As Object = Nothing

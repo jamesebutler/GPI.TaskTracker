@@ -23,6 +23,7 @@ Partial Class User_Controls_Tasks_TaskSearchSimple
     Dim in_DueDateTo As String = String.Empty
     Dim in_ClosedDateFrom As String = String.Empty
     Dim in_ClosedDateTo As String = String.Empty
+    Dim in_Header As String = String.Empty
 
 
     Private _currentUser As IP.Bids.UserInfo
@@ -172,9 +173,24 @@ Partial Class User_Controls_Tasks_TaskSearchSimple
         'BUILD SEARCH CRITERIA
         Dim _username = Me._ResponsiblePerson.SelectedValue
 
-        If Len(_username) = 0 Then
+
+        If Len(_txtHeaderNumber.Text) > 0 Then
+
+            in_Header = _txtHeaderNumber.Text
+
+        End If
+
+
+
+        If Len(_username) = 0 And Len(in_Header) = 0 Then
+            _username = _currentUser.Username
+        ElseIf Len(_username) = 0 And Len(in_Header) > 0 Then
+            _username = ""
+        Else
             _username = _currentUser.Username
         End If
+
+
 
 
 
@@ -206,6 +222,8 @@ Partial Class User_Controls_Tasks_TaskSearchSimple
             in_Description = _txtDescription.Text
 
         End If
+
+
 
         If Me._dtDueDate.StartDate.Length > 0 Then
 
@@ -240,6 +258,7 @@ Partial Class User_Controls_Tasks_TaskSearchSimple
                                                     in_TaskStatus,
                                                     in_DueDateFrom,
                                                     in_DueDateTo,
+                                                    in_Header,
                                                     in_ClosedDateFrom,
                                                     in_ClosedDateTo)
 
@@ -282,6 +301,7 @@ Partial Class User_Controls_Tasks_TaskSearchSimple
                                     ByVal in_TaskStatus As String,
                                     ByVal in_DueDateFrom As String,
                                     ByVal in_DueDateTo As String,
+                                    ByVal in_Header As String,
                                     ByVal in_ClosedDateFrom As String,
                                     ByVal in_ClosedDateTo As String) As DataSet
 
@@ -336,6 +356,7 @@ Partial Class User_Controls_Tasks_TaskSearchSimple
             param.Value = in_DueDateTo
             paramCollection.Add(param)
 
+
             param = New OracleParameter
             param.ParameterName = "in_ClosedDateFrom"
             param.OracleDbType = OracleDbType.VarChar
@@ -356,6 +377,14 @@ Partial Class User_Controls_Tasks_TaskSearchSimple
             param.OracleDbType = OracleDbType.VarChar
             param.Direction = Data.ParameterDirection.Input
             param.Value = username
+            paramCollection.Add(param)
+
+
+            param = New OracleParameter
+            param.ParameterName = "in_Header"
+            param.OracleDbType = OracleDbType.VarChar
+            param.Direction = Data.ParameterDirection.Input
+            param.Value = in_Header
             paramCollection.Add(param)
 
             param = New OracleParameter

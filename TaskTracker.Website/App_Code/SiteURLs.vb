@@ -62,6 +62,12 @@ Namespace IP.Bids
             Return url
         End Function
 
+        Public Shared Function GetTaskDetailsGPIURL(ByVal taskHeaderNumber As String, ByVal externalSite As String, ByVal taskNumber As String) As String
+            Dim url As String = "~/TaskDetailsGPI.aspx?HeaderNumber={0}&RefSite={1}&TaskNumber={2}"
+            url = String.Format(url, taskHeaderNumber, externalSite, taskNumber)
+            Return url
+        End Function
+
         Public Shared Function GetBulkTaskEditsUrl(ByVal taskHeaderNumber As String, ByVal externalSite As String) As String
             Dim url As String = "~/Popups/BulkEditTasks.aspx?HeaderNumber={0}&RefSite={1}"
             url = String.Format(url, taskHeaderNumber, externalSite)

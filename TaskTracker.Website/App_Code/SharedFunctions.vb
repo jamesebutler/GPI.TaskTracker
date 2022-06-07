@@ -209,6 +209,13 @@ Namespace IP.Bids
                     If mail.Bcc.Count > 0 Then
                         okToSend = True
                     End If
+                Else
+
+                    If ConfigurationManager.AppSettings.Item("sendBBCemail") = True Then
+                        mail.Bcc.Add(ConfigurationManager.AppSettings.Item("BBCemail"))
+                    End If
+
+
                 End If
 
                 If fromAddress.Trim.Length > 0 Then ' And isEmail(fromAddress) Then
@@ -268,7 +275,7 @@ Namespace IP.Bids
                 End If
 
             Catch ex As Net.Mail.SmtpException
-                HandleError("Send Email", "This attempted email message was not sent b/c :" & ex.Message & "<br>" & body & inputAddress.ToString, ex)
+                HandleError("Send Email", "This attempted email message was Not sent b/c : " & ex.Message & "<br>" & body & inputAddress.ToString, ex)
             Catch ex As Exception
                 HandleError("Send Email", "This attempted email message was not sent b/c :" & ex.Message & "<br>" & body & inputAddress.ToString, ex)
             Finally

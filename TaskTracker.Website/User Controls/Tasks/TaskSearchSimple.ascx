@@ -141,6 +141,16 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <asp:Label ID="_lblHeaderNumber" runat="server" Text="Header Number"></asp:Label><br />
+                                <asp:TextBox ID="_txtHeaderNumber" runat="server" Width="45%" TextMode="SingleLine"></asp:TextBox>
+                           
+                            </div>
+                        </div>
+                    </div>
+
 
 <%--ROW 3--%>
 <%--                    <div class="row">
@@ -365,8 +375,8 @@
     <Columns>
 
     <telerik:GridBoundColumn HeaderStyle-Width="9%" AllowSorting="true" AllowFiltering="true"   DataField="FULLNAME" HeaderText="Responsible Person" ></telerik:GridBoundColumn>
-    <telerik:GridBoundColumn HeaderStyle-Width="7%" AllowSorting="true" AllowFiltering="true" DataField="STATUSNAME" HeaderText="Status" ></telerik:GridBoundColumn>
-    <telerik:GridBoundColumn HeaderStyle-Width="7%" AllowSorting="true" AllowFiltering="true" DataField="PRIORITY_fullCase" HeaderText="Priority" ></telerik:GridBoundColumn>
+     <telerik:GridBoundColumn HeaderStyle-Width="7%" AllowSorting="true" AllowFiltering="true" DataField="currentstatus" HeaderText="Status" ></telerik:GridBoundColumn>
+        <telerik:GridBoundColumn HeaderStyle-Width="7%" AllowSorting="true" AllowFiltering="true" DataField="PRIORITY_fullCase" HeaderText="Priority" ></telerik:GridBoundColumn>
     <telerik:GridBoundColumn HeaderStyle-Width="6%" AllowSorting="true" AllowFiltering="true" DataField="DUEDATE" ItemStyle-HorizontalAlign="Left" HeaderText="Due Date"  DataFormatString="{0:M/d/yyyy}"></telerik:GridBoundColumn>
     <telerik:GridBoundColumn HeaderStyle-Width="6%" AllowSorting="true" AllowFiltering="true" DataField="CLOSEDDATE" ItemStyle-HorizontalAlign="Left" HeaderText="Closed Date"  HeaderStyle-Wrap="true"	DataFormatString="{0:M/d/yyyy}"></telerik:GridBoundColumn>
  

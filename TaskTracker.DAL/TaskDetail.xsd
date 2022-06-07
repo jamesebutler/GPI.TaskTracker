@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Public" Name="ConnectionString1 (MySettings)" PropertyReference="ApplicationSettings.IP.TaskTrackerDAL.My.MySettings.GlobalReference.Default.ConnectionString1" Provider="Devart.Data.Oracle" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Public" Name="ConnectionString (MySettings)" PropertyReference="ApplicationSettings.IP.TaskTrackerDAL.My.MySettings.GlobalReference.Default.ConnectionString" Provider="Devart.Data.Oracle" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ResponsibleUserTableAdapter" GeneratorDataComponentClassName="ResponsibleUserTableAdapter" Name="ResponsibleUser" UserDataComponentName="ResponsibleUserTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETRESPONSIBLELIST" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetResponsibleList" GetMethodModifier="Public" GetMethodName="GetResponsibleList" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetResponsibleList" UserSourceName="GetResponsibleList">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETRESPONSIBLELIST" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetResponsibleList" GetMethodModifier="Public" GetMethodName="GetResponsibleList" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetResponsibleList" UserSourceName="GetResponsibleList">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.GETRESPONSIBLELIST</CommandText>
@@ -34,7 +34,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TaskItemTableAdapter" GeneratorDataComponentClassName="TaskItemTableAdapter" Name="TaskItem" UserDataComponentName="TaskItemTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETTASKITEM" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetTaskItem" GetMethodModifier="Public" GetMethodName="GetTaskItem" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetTaskItem" UserSourceName="GetTaskItem">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETTASKITEM" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetTaskItem" GetMethodModifier="Public" GetMethodName="GetTaskItem" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetTaskItem" UserSourceName="GetTaskItem">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.GETTASKITEM</CommandText>
@@ -83,7 +83,7 @@
               <Mapping SourceColumn="ORIGINALROLESEQID" DataSetColumn="ORIGINALROLESEQID" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.UPDATECOPYTASKS" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="CopyTask" Modifier="Public" Name="CopyTask" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CopyTask">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.UPDATECOPYTASKS" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="CopyTask" Modifier="Public" Name="CopyTask" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CopyTask">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.UPDATECOPYTASKS</CommandText>
@@ -101,7 +101,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.DELETEDEPENDENTTASK" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteDependentTask" Modifier="Public" Name="DeleteDependentTask" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteDependentTask">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.DELETEDEPENDENTTASK" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteDependentTask" Modifier="Public" Name="DeleteDependentTask" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteDependentTask">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.DELETEDEPENDENTTASK</CommandText>
@@ -116,7 +116,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.DELETETASK" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteTask" Modifier="Public" Name="DeleteTask" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteTask">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.DELETETASK" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteTask" Modifier="Public" Name="DeleteTask" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteTask">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.DELETETASK</CommandText>
@@ -129,7 +129,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETDEPENDENTTASKS" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDependentTasks" GetMethodModifier="Public" GetMethodName="GetDependentTasks" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDependentTasks" UserSourceName="GetDependentTasks">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETDEPENDENTTASKS" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDependentTasks" GetMethodModifier="Public" GetMethodName="GetDependentTasks" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDependentTasks" UserSourceName="GetDependentTasks">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.GETDEPENDENTTASKS</CommandText>
@@ -140,7 +140,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETLASTCREATEDTASK" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetLastCreatedTaskItem" GetMethodModifier="Public" GetMethodName="GetLastCreatedTaskItem" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetLastCreatedTaskItem" UserSourceName="GetLastCreatedTaskItem">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETLASTCREATEDTASK" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetLastCreatedTaskItem" GetMethodModifier="Public" GetMethodName="GetLastCreatedTaskItem" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetLastCreatedTaskItem" UserSourceName="GetLastCreatedTaskItem">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.GETLASTCREATEDTASK</CommandText>
@@ -151,7 +151,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETOUTAGETEMPLATETASKITEM" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetOutageTemplateTaskItem" GetMethodModifier="Public" GetMethodName="GetOutageTemplateTaskItem" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetOutageTemplateTaskItem" UserSourceName="GetOutageTemplateTaskItem">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETOUTAGETEMPLATETASKITEM" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetOutageTemplateTaskItem" GetMethodModifier="Public" GetMethodName="GetOutageTemplateTaskItem" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetOutageTemplateTaskItem" UserSourceName="GetOutageTemplateTaskItem">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.GETOUTAGETEMPLATETASKITEM</CommandText>
@@ -162,7 +162,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETOUTAGETEMPLATETASKITEMLIST" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetOutageTemplateTaskItemList" GetMethodModifier="Public" GetMethodName="GetOutageTemplateTaskItemList" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetOutageTemplateTaskItemList" UserSourceName="GetOutageTemplateTaskItemList">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETOUTAGETEMPLATETASKITEMLIST" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetOutageTemplateTaskItemList" GetMethodModifier="Public" GetMethodName="GetOutageTemplateTaskItemList" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetOutageTemplateTaskItemList" UserSourceName="GetOutageTemplateTaskItemList">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.GETOUTAGETEMPLATETASKITEMLIST</CommandText>
@@ -173,7 +173,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETTASKITEMLIST" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetTaskItemList" GetMethodModifier="Public" GetMethodName="GetTaskItemList" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetTaskItemList" UserSourceName="GetTaskItemList">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETTASKITEMLIST" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetTaskItemList" GetMethodModifier="Public" GetMethodName="GetTaskItemList" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetTaskItemList" UserSourceName="GetTaskItemList">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.GETTASKITEMLIST</CommandText>
@@ -184,7 +184,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.UPDATEDEPENDENTTASKITEM" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="UpdateDependentTask" Modifier="Public" Name="UpdateDependentTask" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateDependentTask">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.UPDATEDEPENDENTTASKITEM" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="UpdateDependentTask" Modifier="Public" Name="UpdateDependentTask" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateDependentTask">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.UPDATEDEPENDENTTASKITEM</CommandText>
@@ -222,7 +222,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.UPDATETASKITEM" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="UpdateTaskItem" GetMethodModifier="Public" GetMethodName="UpdateTaskItem" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="UpdateTaskItem" UserSourceName="UpdateTaskItem">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.UPDATETASKITEM" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="UpdateTaskItem" GetMethodModifier="Public" GetMethodName="UpdateTaskItem" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="UpdateTaskItem" UserSourceName="UpdateTaskItem">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.UPDATETASKITEM</CommandText>
@@ -261,7 +261,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RecurringTasksTableAdapter" GeneratorDataComponentClassName="RecurringTasksTableAdapter" Name="RecurringTasks" UserDataComponentName="RecurringTasksTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETRECURRINGTASKS" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetRecurringTasks" GetMethodModifier="Public" GetMethodName="GetRecurringTasks" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetRecurringTasks" UserSourceName="GetRecurringTasks">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETRECURRINGTASKS" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetRecurringTasks" GetMethodModifier="Public" GetMethodName="GetRecurringTasks" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetRecurringTasks" UserSourceName="GetRecurringTasks">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.GETRECURRINGTASKS</CommandText>
@@ -283,7 +283,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SubTaskTableAdapter" GeneratorDataComponentClassName="SubTaskTableAdapter" Name="SubTask" UserDataComponentName="SubTaskTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetSubTasks" GetMethodModifier="Public" GetMethodName="GetSubTasks" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetSubTasks" UserSourceName="GetSubTasks">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetSubTasks" GetMethodModifier="Public" GetMethodName="GetSubTasks" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetSubTasks" UserSourceName="GetSubTasks">
                 <DeleteCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.DELETESUBTASK</CommandText>
@@ -344,7 +344,7 @@
               <Mapping SourceColumn="RESPROLESITENAME" DataSetColumn="RESPROLESITENAME" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.DELETESUBTASK" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteSubTasks" Modifier="Public" Name="DeleteSubTasks" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteSubTasks">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.DELETESUBTASK" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteSubTasks" Modifier="Public" Name="DeleteSubTasks" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteSubTasks">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.DELETESUBTASK</CommandText>
@@ -355,7 +355,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.UPDATESUBTASKITEM" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="UpdateSubTask" GetMethodModifier="Public" GetMethodName="UpdateSubTask" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="UpdateSubTask" UserSourceName="UpdateSubTask">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.UPDATESUBTASKITEM" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="UpdateSubTask" GetMethodModifier="Public" GetMethodName="UpdateSubTask" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="UpdateSubTask" UserSourceName="UpdateSubTask">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.UPDATESUBTASKITEM</CommandText>
@@ -385,7 +385,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UserDefaultsTableAdapter" GeneratorDataComponentClassName="UserDefaultsTableAdapter" Name="UserDefaults" UserDataComponentName="UserDefaultsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTGENERALDATA.MTTUSERDEFAULTS" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetUserDefaults" GetMethodModifier="Public" GetMethodName="GetUserDefaults" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetUserDefaults" UserSourceName="GetUserDefaults">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTGENERALDATA.MTTUSERDEFAULTS" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetUserDefaults" GetMethodModifier="Public" GetMethodName="GetUserDefaults" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetUserDefaults" UserSourceName="GetUserDefaults">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTGENERALDATA.MTTUSERDEFAULTS</CommandText>
@@ -410,7 +410,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RecurringParametersTableAdapter" GeneratorDataComponentClassName="RecurringParametersTableAdapter" Name="RecurringParameters" UserDataComponentName="RecurringParametersTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETRECURRINGPARAMETERS" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetRecurringParameters" GetMethodModifier="Public" GetMethodName="GetRecurringParameters" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetRecurringParameters" UserSourceName="GetRecurringParameters">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETRECURRINGPARAMETERS" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetRecurringParameters" GetMethodModifier="Public" GetMethodName="GetRecurringParameters" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetRecurringParameters" UserSourceName="GetRecurringParameters">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.GETRECURRINGPARAMETERS</CommandText>
@@ -431,7 +431,7 @@
               <Mapping SourceColumn="PROFILETYPENAME" DataSetColumn="PROFILETYPENAME" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.UPDATERECURRINGPARAMETERS" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="UpdateRecurringParameters" Modifier="Public" Name="UpdateRecurringParameters" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateRecurringParameters">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.UPDATERECURRINGPARAMETERS" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="UpdateRecurringParameters" Modifier="Public" Name="UpdateRecurringParameters" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateRecurringParameters">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.UPDATERECURRINGPARAMETERS</CommandText>
@@ -448,7 +448,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RecurringParametersListTableAdapter" GeneratorDataComponentClassName="RecurringParametersListTableAdapter" Name="RecurringParametersList" UserDataComponentName="RecurringParametersListTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETRECURRINGPARAMETERSLIST" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetRecurringParametersList" GetMethodModifier="Public" GetMethodName="GetRecurringParametersList" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetRecurringParametersList" UserSourceName="GetRecurringParametersList">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETRECURRINGPARAMETERSLIST" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetRecurringParametersList" GetMethodModifier="Public" GetMethodName="GetRecurringParametersList" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetRecurringParametersList" UserSourceName="GetRecurringParametersList">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.GETRECURRINGPARAMETERSLIST</CommandText>
@@ -468,7 +468,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TaskItemCommentsTableAdapter" GeneratorDataComponentClassName="TaskItemCommentsTableAdapter" Name="TaskItemComments" UserDataComponentName="TaskItemCommentsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETTASKITEMCOMMENTS" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetComments" GetMethodModifier="Public" GetMethodName="GetComments" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetComments" UserSourceName="GetComments">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.GETTASKITEMCOMMENTS" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetComments" GetMethodModifier="Public" GetMethodName="GetComments" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetComments" UserSourceName="GetComments">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.GETTASKITEMCOMMENTS</CommandText>
@@ -489,7 +489,7 @@
               <Mapping SourceColumn="CREATEDBY" DataSetColumn="CREATEDBY" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.UPDATETASKCOMMENTS" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="UpdateComments" Modifier="Public" Name="UpdateComments" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateComments">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.UPDATETASKCOMMENTS" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="UpdateComments" Modifier="Public" Name="UpdateComments" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateComments">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.UPDATETASKCOMMENTS</CommandText>
@@ -507,7 +507,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ImmediateEmailTableAdapter" GeneratorDataComponentClassName="ImmediateEmailTableAdapter" Name="ImmediateEmail" UserDataComponentName="ImmediateEmailTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTBATCHEMAILS.INDTASKLISTING" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetImmediateEmail" GetMethodModifier="Public" GetMethodName="GetImmediateEmail" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetImmediateEmail" UserSourceName="GetImmediateEmail">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTBATCHEMAILS.INDTASKLISTING" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetImmediateEmail" GetMethodModifier="Public" GetMethodName="GetImmediateEmail" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetImmediateEmail" UserSourceName="GetImmediateEmail">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTBATCHEMAILS.INDTASKLISTING</CommandText>
@@ -553,7 +553,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CriticalDateTableAdapter" GeneratorDataComponentClassName="CriticalDateTableAdapter" Name="CriticalDate" UserDataComponentName="CriticalDateTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.CHECKDATECRITICAL" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetCriticalDateAccess" GetMethodModifier="Public" GetMethodName="GetCriticalDateAccess" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetCriticalDateAccess" UserSourceName="GetCriticalDateAccess">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTTASKITEM.CHECKDATECRITICAL" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetCriticalDateAccess" GetMethodModifier="Public" GetMethodName="GetCriticalDateAccess" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetCriticalDateAccess" UserSourceName="GetCriticalDateAccess">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTTASKITEM.CHECKDATECRITICAL</CommandText>
@@ -573,7 +573,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MTTBATCHREPLICATIONTableAdapter" GeneratorDataComponentClassName="MTTBATCHREPLICATIONTableAdapter" Name="MTTBATCHREPLICATION" UserDataComponentName="MTTBATCHREPLICATIONTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionString1 (MySettings)" DbObjectName="RELADMIN.MTTBATCHREPLICATION.SELECTEMAILTASKS" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetEmailData" GetMethodModifier="Public" GetMethodName="GetEmailData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetEmailData" UserSourceName="GetEmailData">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="RELADMIN.MTTBATCHREPLICATION.SELECTEMAILTASKS" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetEmailData" GetMethodModifier="Public" GetMethodName="GetEmailData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetEmailData" UserSourceName="GetEmailData">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>RELADMIN.MTTBATCHREPLICATION.SELECTEMAILTASKS</CommandText>

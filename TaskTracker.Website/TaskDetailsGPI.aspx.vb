@@ -73,7 +73,7 @@ Partial Class TaskDetailsGPI
                 End If
             End If
 
-            Dim jsValidateForSave As String = "var canPostBack=CheckForm('TaskDetails'); if (canPostBack) DisplayBusy(); return canPostBack;"
+            Dim jsValidateForSave As String = "var canPostBack=CheckForm('TaskDetailsGPI'); if (canPostBack) DisplayBusy(); return canPostBack;"
             _btnTaskHeader.OnClientClick = "DisplayBusy();"
             _btnReturnToTaskList.OnClientClick = "DisplayBusy();"
             _btnSaveTask.OnClientClick = jsValidateForSave
@@ -1275,6 +1275,484 @@ Partial Class TaskDetailsGPI
         PopulateComments()
     End Sub
 
+
+
+    Private Sub SaveTaskAdd(Optional ByVal afterSaveUrl As String = "#")
+        Dim newTaskItem As New TaskItem()
+        Dim taskItemBLL As New TaskTrackerItemBll
+        Dim isDirty As Boolean
+        Dim isNewTask As Boolean
+        Dim sendEmail As Boolean
+        Dim isTankTask As Boolean
+        'Dim currentTaskItem As New TaskItem
+        TaskItemNumber = "-1"
+
+
+        Me.Validate("TaskDetails")
+        If Page.IsValid Then
+            newTaskItem = taskItemBLL.GetTaskItem(CInt(-1))
+            If newTaskItem Is Nothing Or CInt(TaskItemNumber) = -1 Then
+                'Updating a Task
+                newTaskItem = New TaskItem()
+                isDirty = True
+                isNewTask = True
+                newTaskItem.TaskItemSeqId = -1
+                newTaskItem.RootTaskItemSeqId = ""
+                sendEmail = True
+            End If
+
+
+            With newTaskItem
+                If .TaskItemSeqId = -1 Then
+                    .CreatedDate = IP.Bids.SharedFunctions.FormatDateTimeToEnglish(Now) 'Now.ToShortDateString
+                    .CreatedBy = Master.CurrentUser.Username
+                    .LastUpdateDate = IP.Bids.SharedFunctions.FormatDateTimeToEnglish(Now)
+                    .LastUpdateUserName = Master.CurrentUser.Username
+                    .ClosedDate = String.Empty
+                    isDirty = True
+                Else
+                    If IsDate(.CreatedDate) Then
+                        .CreatedDate = IP.Bids.SharedFunctions.FormatDateTimeToEnglish(CDate(.CreatedDate))
+                    End If
+                    .LastUpdateDate = IP.Bids.SharedFunctions.FormatDateTimeToEnglish(Now)
+                    .LastUpdateUserName = Master.CurrentUser.Username
+                End If
+
+                If isNewTask Then
+                    '.ClosedDate = Me._ClosedDate.StartDate
+                    If Me._ClosedDate.StartDate.Length > 0 AndAlso IsDate(Me._ClosedDate.StartDate) Then
+                        .ClosedDate = IP.Bids.SharedFunctions.FormatDateTimeToEnglish(CDate(Me._ClosedDate.StartDate))
+                    Else
+                        .ClosedDate = String.Empty
+                    End If
+                Else
+                    If IsDate(.ClosedDate) AndAlso IsDate(Me._ClosedDate.StartDate) Then
+                        If CDate(.ClosedDate) <> CDate(Me._ClosedDate.StartDate) Then
+                            .ClosedDate = IP.Bids.SharedFunctions.FormatDateTimeToEnglish(CDate(Me._ClosedDate.StartDate))
+                            isDirty = True
+                        Else
+                            'lets insure that we have an english date
+                            .ClosedDate = IP.Bids.SharedFunctions.FormatDateTimeToEnglish(CDate(Me._ClosedDate.StartDate))
+                        End If
+                    ElseIf .ClosedDate <> Me._ClosedDate.StartDate AndAlso IsDate(Me._ClosedDate.StartDate) Then
+                        .ClosedDate = IP.Bids.SharedFunctions.FormatDateTimeToEnglish(CDate(Me._ClosedDate.StartDate))
+                        isDirty = True
+                    Else
+                        .ClosedDate = ""
+                    End If
+                End If
+
+                If isNewTask Then
+                    If _EstimatedDueDate.DateIsCritical Then
+                        .DateCritical = "Y"
+                    Else
+                        .DateCritical = "N"
+                    End If
+                    isDirty = True
+                Else
+                    If _EstimatedDueDate.DateIsCritical = True And .DateCritical.ToUpper = "Y" Then
+                        'no change
+                    ElseIf _EstimatedDueDate.DateIsCritical = False And .DateCritical.ToUpper = "N" Then
+                        'no change
+                    Else
+                        If _EstimatedDueDate.DateIsCritical Then
+                            .DateCritical = "Y"
+                        Else
+                            .DateCritical = "N"
+                        End If
+                        isDirty = True
+                    End If
+                End If
+
+                If isNewTask Then
+                    .Description = _txtDescription.Text
+                    isDirty = True
+                Else
+                    If .Description <> _txtDescription.Text Then
+                        .Description = _txtDescription.Text
+                        isDirty = True
+                    End If
+                End If
+
+                If isNewTask Then
+                    .DueDate = IP.Bids.SharedFunctions.FormatDateTimeToEnglish(CDate(_EstimatedDueDate.StartDate))
+                Else
+                    If .DueDate <> _EstimatedDueDate.StartDate Then
+                        .DueDate = IP.Bids.SharedFunctions.FormatDateTimeToEnglish(CDate(_EstimatedDueDate.StartDate))
+                        isDirty = True
+                    Else
+                        'Let's make sure that the due date is in English
+                        .DueDate = IP.Bids.SharedFunctions.FormatDateTimeToEnglish(CDate(_EstimatedDueDate.StartDate))
+                    End If
+                End If
+
+
+
+                If isNewTask Then
+                    If IsNumeric(_txtLeadTime.Text) Then
+                        .LeadTime = CInt(Me._txtLeadTime.Text)
+                    Else
+                        .LeadTime = 0
+                    End If
+                Else
+                    If IsNumeric(_txtLeadTime.Text) AndAlso .LeadTime <> CInt(Me._txtLeadTime.Text) Then
+                        If IsNumeric(_txtLeadTime.Text) Then
+                            .LeadTime = CInt(Me._txtLeadTime.Text)
+                        Else
+                            .LeadTime = 0
+                        End If
+                        isDirty = True
+                    ElseIf IsNumeric(_txtLeadTime.Text) AndAlso .LeadTime = CInt(Me._txtLeadTime.Text) Then
+                        .LeadTime = CInt(Me._txtLeadTime.Text)
+                        'no change
+                    Else
+                        .LeadTime = 0
+                        isDirty = True
+                    End If
+                End If
+
+                If isNewTask Then
+                    .Priority = Me._ddlPriority.SelectedValue
+                Else
+                    If .Priority <> _ddlPriority.SelectedValue Then
+                        .Priority = Me._ddlPriority.SelectedValue
+                        isDirty = True
+                    End If
+                End If
+
+                If isNewTask Then
+                    .StatusSeqId = CInt(Me._rblStatus.SelectedValue)
+                Else
+                    If .StatusSeqId <> CInt(Me._rblStatus.SelectedValue) Then
+                        .StatusSeqId = CInt(Me._rblStatus.SelectedValue)
+                        isDirty = True
+                    End If
+                End If
+
+                If isNewTask Then
+                    .WorkOrder = Me._txtWorkOrder.Text
+                Else
+                    If .WorkOrder <> Me._txtWorkOrder.Text Then
+                        .WorkOrder = Me._txtWorkOrder.Text
+                        isDirty = True
+                    End If
+                End If
+
+                If isNewTask Then
+                    .EstimatedCost = Me._txtEstimatedCost.Text
+                Else
+                    If .EstimatedCost <> _txtEstimatedCost.Text Then
+                        .EstimatedCost = Me._txtEstimatedCost.Text
+                        isDirty = True
+                    End If
+                End If
+
+                If isNewTask Then
+                    .ActualCost = Me._txtActualCost.Text
+                Else
+                    If .ActualCost <> _txtActualCost.Text Then
+                        .ActualCost = Me._txtActualCost.Text
+                        isDirty = True
+                    End If
+                End If
+
+                If isNewTask Then
+                    If Me._ResponsiblePerson.SelectedValue.Length > 0 Then
+                        If IsNumeric(_ResponsiblePerson.SelectedValue) AndAlso .ClosedDate IsNot Nothing AndAlso .ClosedDate.Length > 0 Then 'User is attempting to close a task that is assigned to a role
+                            If IP.Bids.SharedFunctions.GetCurrentUser.IsUserInEmployeeTable = True Then
+                                _ResponsiblePerson.DefaultUserName = IP.Bids.SharedFunctions.GetCurrentUser.Username
+                                _ResponsiblePerson.PlantCode = IP.Bids.SharedFunctions.GetCurrentUser.PlantCode
+                                _ResponsiblePerson.PopulateEmployeeList()
+                            Else
+                                .ClosedDate = String.Empty
+                                _rblStatus.ClearSelection()
+                                .StatusSeqId = CInt(_rblStatus.Items(OpenTaskSeqId).Value)
+                                _rblStatus.Items(OpenTaskSeqId).Selected = True
+                                Session.Add("TaskDetailMessage", IP.Bids.SharedFunctions.LocalizeValue("An employee has to be selected before a Task can be Completed.", True))
+                                isDirty = True
+                                afterSaveUrl = "RELOAD"
+                            End If
+                        End If
+                    End If
+                    If Me._ResponsiblePerson.SelectedValue.Length > 0 Then
+                        If IsNumeric(_ResponsiblePerson.SelectedValue) Then 'Role
+                            .ResponsibleRoleSeqId = CInt(_ResponsiblePerson.SelectedValue)
+                            .RoleName = _ResponsiblePerson.SelectedText
+                            .ResponsibleUserName = String.Empty
+                            .ResponsibleName = String.Empty
+                            .ResponsibleRolePlantCode = _ResponsiblePerson.PlantCode
+
+                            If .ClosedDate IsNot Nothing AndAlso .ClosedDate.Length > 0 Then
+                                'Someone other than a Role Name should be used for the Responsible Person
+                                .ClosedDate = String.Empty
+                                _rblStatus.ClearSelection()
+                                .StatusSeqId = CInt(_rblStatus.Items(OpenTaskSeqId).Value)
+                                _rblStatus.Items(OpenTaskSeqId).Selected = True
+                                Session.Add("TaskDetailMessage", IP.Bids.SharedFunctions.LocalizeValue("An employee has to be selected before a Task can be Completed.", True))
+
+                            End If
+                            isDirty = True
+                        Else
+                            .ResponsibleRoleSeqId = 0
+                            .RoleName = String.Empty
+                            .ResponsibleRolePlantCode = String.Empty
+                            .ResponsibleUserName = _ResponsiblePerson.SelectedValue
+                            .ResponsibleName = _ResponsiblePerson.SelectedText
+                            isDirty = True
+                        End If
+                    End If
+                Else
+                    If Me._ResponsiblePerson.SelectedValue.Length > 0 Then
+                        If IsNumeric(_ResponsiblePerson.SelectedValue) AndAlso .ClosedDate.Length > 0 Then 'User is attempting to close a task that is assigned to a role
+                            'New - Set the role to the current user
+                            If IP.Bids.SharedFunctions.GetCurrentUser.IsUserInEmployeeTable = True Then
+                                _ResponsiblePerson.PlantCode = IP.Bids.SharedFunctions.GetCurrentUser.PlantCode
+                                _ResponsiblePerson.DefaultUserName = IP.Bids.SharedFunctions.GetCurrentUser.Username
+                                _ResponsiblePerson.PopulateEmployeeList()
+                            Else
+                                .ClosedDate = String.Empty
+                                _rblStatus.ClearSelection()
+                                .StatusSeqId = CInt(_rblStatus.Items(OpenTaskSeqId).Value)
+                                _rblStatus.Items(OpenTaskSeqId).Selected = True
+                                Session.Add("TaskDetailMessage", IP.Bids.SharedFunctions.LocalizeValue("An employee has to be selected before a Task can be Completed.", True))
+                                isDirty = True
+                                afterSaveUrl = "RELOAD"
+                            End If
+                        End If
+                    Else
+                        If .ClosedDate.Length > 0 Then 'User is attempting to close a task that is assigned to a role
+                            'New - Set the role to the current user
+                            If IP.Bids.SharedFunctions.GetCurrentUser.IsUserInEmployeeTable = True Then
+                                _ResponsiblePerson.DefaultUserName = IP.Bids.SharedFunctions.GetCurrentUser.Username
+                                _ResponsiblePerson.PlantCode = IP.Bids.SharedFunctions.GetCurrentUser.PlantCode
+                                _ResponsiblePerson.PopulateEmployeeList()
+                            Else
+                                .ClosedDate = String.Empty
+                                _rblStatus.ClearSelection()
+                                .StatusSeqId = CInt(_rblStatus.Items(OpenTaskSeqId).Value)
+                                _rblStatus.Items(OpenTaskSeqId).Selected = True
+                                Session.Add("TaskDetailMessage", IP.Bids.SharedFunctions.LocalizeValue("An employee has to be selected before a Task can be Completed.", True))
+                                isDirty = True
+                                afterSaveUrl = "RELOAD"
+                            End If
+                        End If
+                    End If
+                    If Me._ResponsiblePerson.SelectedValue.Length > 0 Then
+                        If IsNumeric(_ResponsiblePerson.SelectedValue) Then 'Role
+                            If CInt(_ResponsiblePerson.SelectedValue) <> .ResponsibleRoleSeqId Or .ResponsibleRolePlantCode <> _ResponsiblePerson.PlantCode Then
+                                .ResponsibleRoleSeqId = CInt(_ResponsiblePerson.SelectedValue)
+                                .RoleName = _ResponsiblePerson.SelectedText
+                                .ResponsibleRolePlantCode = _ResponsiblePerson.PlantCode
+                                .ResponsibleUserName = String.Empty
+                                .ResponsibleName = String.Empty
+                                sendEmail = True
+                                isDirty = True
+                            End If
+                            If .ClosedDate.Length > 0 Then
+                                'Someone other than a Role Name should be used for the Responsible Person
+                                .ClosedDate = String.Empty
+                                _rblStatus.ClearSelection()
+                                .StatusSeqId = CInt(_rblStatus.Items(OpenTaskSeqId).Value)
+                                _rblStatus.Items(OpenTaskSeqId).Selected = True
+                                Session.Add("TaskDetailMessage", IP.Bids.SharedFunctions.LocalizeValue("An employee has to be selected before a Task can be Completed.", True))
+                                isDirty = True
+                            End If
+                            'isDirty = True
+
+                        Else
+                            If .ResponsibleUserName <> _ResponsiblePerson.SelectedValue Then 'AndAlso .ResponsibleRolePlantCode <> _ResponsiblePerson.PlantCode Then ' MJP 8/22/2013 to fix a saving issue
+                                .ResponsibleRoleSeqId = 0
+                                .RoleName = String.Empty
+                                .ResponsibleRolePlantCode = String.Empty
+                                .ResponsibleUserName = _ResponsiblePerson.SelectedValue
+                                .ResponsibleName = _ResponsiblePerson.SelectedText
+                                isDirty = True
+                                sendEmail = True
+                            End If
+                        End If
+                    Else
+                        'this should be a required field
+                    End If
+                End If
+
+
+
+                If isNewTask Then
+                    .TaskHeaderSeqId = CInt(TaskHeaderNumber)
+                Else
+                    If .TaskHeaderSeqId <> CInt(TaskHeaderNumber) Then
+                        .TaskHeaderSeqId = CInt(TaskHeaderNumber)
+                        isDirty = True
+                    End If
+                End If
+
+                If isNewTask Then
+                    .TaskItemSeqId = CInt(TaskItemNumber)
+                Else
+                    If .TaskItemSeqId <> CInt(TaskItemNumber) Then
+                        .TaskItemSeqId = CInt(TaskItemNumber)
+                        isDirty = True
+                    End If
+                End If
+
+                If isNewTask Then
+                    .Title = Me._txtTitle.Text
+                Else
+                    If .Title <> Me._txtTitle.Text Then
+                        .Title = Me._txtTitle.Text
+                        isDirty = True
+                    End If
+                End If
+
+
+                If (RefSite.ToLower = "tanks" Or (IsNumeric(.TankInspectionId) AndAlso CInt(.TankInspectionId) > 0)) Then
+                    If TankType = TankTaskTypes.Inspection Then
+                        isTankTask = True
+                        If isNewTask Then
+                            .Title = _ddlInspectionTypeList.SelectedItem.Text
+
+                        Else
+                            If .Title <> _ddlInspectionTypeList.SelectedItem.Text Then
+                                .Title = _ddlInspectionTypeList.SelectedItem.Text
+                                isDirty = True
+                            End If
+                        End If
+                        .TankInspectionId = _ddlInspectionTypeList.SelectedValue
+                    End If
+                End If
+
+                If isNewTask Then
+                    .Comments = Me._txtComments.Text
+                Else
+                    If .Comments <> Me._txtComments.Text Then
+                        .Comments = Me._txtComments.Text
+                        isDirty = True
+                    End If
+                End If
+                Me._txtComments.Text = String.Empty
+
+                If isNewTask Then
+                    .UpdateFlag = Me._rblUpdateTasks.SelectedValue
+                Else
+                    If .UpdateFlag <> Me._rblUpdateTasks.SelectedValue Then
+                        .UpdateFlag = Me._rblUpdateTasks.SelectedValue
+                        isDirty = True
+                    End If
+                End If
+            End With
+
+            If Me._ClosedDate.StartDate.Length > 0 Then
+                ReadOnlyMode()
+                If newTaskItem.Dependenttaskseqid IsNot Nothing AndAlso newTaskItem.Dependenttaskseqid.Length = 0 Then
+                    _btnSaveandShowRecurrence.Enabled = True
+                End If
+            Else
+                EditMode()
+            End If
+
+            If isDirty Then
+                ' Dim taskTrackerBLL As New TaskTrackerItemBll
+                ' Dim subTaskItems As New System.Collections.Generic.List(Of SubTaskItem)
+                If Me._ClosedDate.StartDate.Length > 0 Then
+                    '    If newTaskItem.RootTaskItemSeqId IsNot Nothing AndAlso IsNumeric(newTaskItem.RootTaskItemSeqId) Then
+
+                    '    End If
+                End If
+
+                Dim updatedTaskItem As System.Collections.Generic.List(Of TaskItem) = taskItemBLL.SaveTaskItem(newTaskItem)
+
+                If updatedTaskItem IsNot Nothing AndAlso updatedTaskItem.Count > 0 Then
+
+                    If Me._ClosedDate.StartDate.Length > 0 Then
+                        Dim taskTrackerBLL As New TaskTrackerItemBll
+                        Dim subTaskItems As New System.Collections.Generic.List(Of SubTaskItem)
+                        If newTaskItem.RootTaskItemSeqId.Length > 0 AndAlso IsNumeric(newTaskItem.RootTaskItemSeqId) Then
+                            subTaskItems = taskTrackerBLL.GetSubTaskItemList(CInt(newTaskItem.RootTaskItemSeqId), False)
+                        End If
+                        If subTaskItems IsNot Nothing AndAlso subTaskItems.Count > 0 Then
+                            For i As Integer = 0 To subTaskItems.Count - 1
+                                'TODO - Need a way to determine if the status was changed from Complete to NWN or Cancel
+                                EmailDataBll.GetAndSendSubsequentTasksImmediateEmail(CInt(subTaskItems.Item(i).TaskItemSeqId), CInt(TaskHeaderNumber), IP.Bids.SharedFunctions.CDateFromEnglishDate(subTaskItems.Item(i).DueDate))
+                            Next
+                        End If
+                    End If
+                    TaskItemNumber = CStr(updatedTaskItem.Item(0).TaskItemSeqId)
+                    If isTankTask And isNewTask Then
+                        CreatTanksSubTask(String.Format("{0} - {1} {0} Date", newTaskItem.Title, "Review and Verify next"), newTaskItem.TankInspectionId)
+                    End If
+
+
+                    'go see if an immediate email should be sent.
+                    Dim sendEmailUser As String = GeneralTaskTrackerBll.GetUserNotiftyProfile(updatedTaskItem.Item(0).ResponsibleUserName, "IMMEDIATE", "ENTERED", 4)
+
+                    If sendEmailUser = "" Then
+                        'might want to send an email about something
+                        IP.Bids.SharedFunctions.SendEmail(ConfigurationManager.AppSettings.Item("BBCemail"), "manufacturing.task@graphicpkg.com", "Task added for: " & updatedTaskItem.Item(0).ResponsibleUserName.ToString, "Email was not sent for an added Task: " & updatedTaskItem.Item(0).TaskItemSeqId.ToString)
+                    Else
+                        If sendEmail And Me._ClosedDate.StartDate.Length = 0 Then
+                            EmailDataBll.GetAndSendImmediateEmail(
+                                updatedTaskItem.Item(0).TaskItemSeqId,
+                                CInt(TaskHeaderNumber))
+                        End If
+
+                    End If
+
+
+
+                    If afterSaveUrl = "#" Then
+                        'Response.Redirect(Page.AppRelativeVirtualPath & "?HeaderNumber=" & TaskHeaderNumber & "&TaskNumber=" & updatedTaskItem.Item(0).TaskItemSeqId)
+                    ElseIf afterSaveUrl.ToLower = "subtasks" Then
+                        Session.Add("popupwindow", "subtasks")
+                        'Response.Redirect(Page.AppRelativeVirtualPath & "?HeaderNumber=" & TaskHeaderNumber & "&TaskNumber=" & updatedTaskItem.Item(0).TaskItemSeqId)
+                    ElseIf afterSaveUrl.ToLower = "dependenttasks" Then
+                        Session.Add("popupwindow", "dependenttasks")
+                    ElseIf afterSaveUrl.ToLower = "editcomments" Then
+                        Session.Add("popupwindow", "editcomments")
+                    ElseIf afterSaveUrl.ToLower = "recurrence" Then
+                        Session.Add("popupwindow", "recurrence")
+                        'Response.Redirect(Page.AppRelativeVirtualPath & "?HeaderNumber=" & TaskHeaderNumber & "&TaskNumber=" & updatedTaskItem.Item(0).TaskItemSeqId)
+                    ElseIf afterSaveUrl.ToLower = "attachments" Then
+                        Session.Add("popupwindow", "attachments")
+                        'Response.Redirect(Page.AppRelativeVirtualPath & "?HeaderNumber=" & TaskHeaderNumber & "&TaskNumber=" & updatedTaskItem.Item(0).TaskItemSeqId)
+                    ElseIf afterSaveUrl.ToLower = "reload" Then
+                        IP.Bids.SharedFunctions.ResponseRedirect(Page.AppRelativeVirtualPath & "?HeaderNumber=" & TaskHeaderNumber & "&TaskNumber=" & updatedTaskItem.Item(0).TaskItemSeqId & "&RefSite=" & RefSite)
+                        'HttpContext.Current.ApplicationInstance.CompleteRequest()
+                    Else
+                        IP.Bids.SharedFunctions.ResponseRedirect(afterSaveUrl) '& "?HeaderNumber=" & TaskHeaderNumber & "&TaskNumber=" & updatedTaskItem.Item(0).TaskItemSeqId)
+                        'HttpContext.Current.ApplicationInstance.CompleteRequest()
+                    End If
+
+                    'If isNewTask Then
+                    IP.Bids.SharedFunctions.ResponseRedirect(Page.AppRelativeVirtualPath & "?HeaderNumber=" & TaskHeaderNumber & "&TaskNumber=" & updatedTaskItem.Item(0).TaskItemSeqId & "&RefSite=" & RefSite)
+                    'HttpContext.Current.ApplicationInstance.CompleteRequest()
+                    'End If
+                    Me._lblLastUpdateDate.Text = IP.Bids.SharedFunctions.FormatDate(updatedTaskItem.Item(0).LastUpdateDate) 'updatedTaskItem.Item(0).LastUpdateDate
+                    Me._lblLastUpdatedBy.Text = updatedTaskItem.Item(0).LastUpdateUserName
+                    updatedTaskItem = Nothing
+                    'jeb Me._udpTaskItems.Update()
+                End If
+            Else
+                If afterSaveUrl = "#" Then
+                ElseIf afterSaveUrl.ToLower = "subtasks" Then
+                    Session.Add("popupwindow", "subtasks")
+                ElseIf afterSaveUrl.ToLower = "dependenttasks" Then
+                    Session.Add("popupwindow", "dependenttasks")
+                ElseIf afterSaveUrl.ToLower = "recurrence" Then
+                    Session.Add("popupwindow", "recurrence")
+                ElseIf afterSaveUrl.ToLower = "attachments" Then
+                    Session.Add("popupwindow", "attachments")
+                ElseIf afterSaveUrl.ToLower = "editcomments" Then
+                    Session.Add("popupwindow", "editcomments")
+                ElseIf afterSaveUrl.ToLower = "reload" Then
+                    IP.Bids.SharedFunctions.ResponseRedirect(Page.AppRelativeVirtualPath & "?HeaderNumber=" & TaskHeaderNumber & "&TaskNumber=" & TaskItemNumber & "&RefSite=" & RefSite)
+                Else
+                    IP.Bids.SharedFunctions.ResponseRedirect(afterSaveUrl)
+                End If
+            End If
+        End If
+        PopulateComments()
+    End Sub
+
     'Private Sub GetTasksCreatedFromSubTasks(ByVal parentNumber As String)
     '    Dim taskTrackerBLL As New TaskTrackerItemBll
     '    Dim tasklist As System.Collections.Generic.List(Of TaskItem) = taskTrackerBLL.GetTaskItemList(CInt(Me.TaskHeaderNumber))
@@ -1411,7 +1889,7 @@ Partial Class TaskDetailsGPI
                 Session.Item("popupwindow") = Request.QueryString("popupwindow")
 
                 'Response.Redirect("~/TaskDetails.aspx?HeaderNumber=" & TaskHeaderNumber & "&TaskNumber=" & TaskItemNumber, False)
-                IP.Bids.SharedFunctions.ResponseRedirect(IP.Bids.SiteURLs.GetTaskDetailsURL(TaskHeaderNumber, RefSite, TaskItemNumber))
+                IP.Bids.SharedFunctions.ResponseRedirect(IP.Bids.SiteURLs.GetTaskDetailsGPIURL(TaskHeaderNumber, RefSite, TaskItemNumber))
                 'HttpContext.Current.ApplicationInstance.CompleteRequest()
                 Exit Sub
             End If
@@ -1580,7 +2058,9 @@ Partial Class TaskDetailsGPI
     End Sub
 
     Protected Sub _btnAddTask_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles _btnAddTask.Click
-        SaveTask(Page.ResolveClientUrl(IP.Bids.SiteURLs.GetTaskDetailsURL(TaskHeaderNumber, RefSite, "-1")))
+        'SaveTask(Page.ResolveClientUrl(IP.Bids.SiteURLs.GetTaskDetailsGPIURL(TaskHeaderNumber, RefSite, "-1")))
+
+        SaveTaskAdd(Page.ResolveClientUrl(IP.Bids.SiteURLs.GetTaskDetailsGPIURL(TaskHeaderNumber, RefSite, "-1")))
     End Sub
 
     'Protected Sub _gvDependentTasks_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles _gvDependentTasks.RowCreated
